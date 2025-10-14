@@ -800,13 +800,17 @@ img {
 
 .timeline-item:nth-child(even) .timeline-content {
     grid-column: 1 / 2;
+    grid-row: 1;
 }
 
 .timeline-item:nth-child(even) .timeline-icon {
     grid-column: 2 / 3;
+    grid-row: 1;
 }
 
 .timeline-icon {
+    grid-column: 2;
+    grid-row: 1;
     width: 80px;
     height: 80px;
     border-radius: var(--radius-full);
@@ -822,6 +826,8 @@ img {
 }
 
 .timeline-content {
+    grid-column: 3;
+    grid-row: 1;
     background: var(--bg-primary);
     padding: var(--spacing-lg);
     border-radius: var(--radius-lg);
