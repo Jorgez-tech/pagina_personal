@@ -519,7 +519,7 @@ window.addEventListener('scroll', throttle(() => {
 // ============================================
 console.log(
     '%c¡Hola Developer! 👋',
-    'color: #6366f1; font-size: 20px; font-weight: bold;'
+    'color: #4749baff; font-size: 20px; font-weight: bold;'
 );
 console.log(
     '%c¿Curioseando el código? ¡Me gusta! 😎\nSi quieres colaborar, ¡contáctame!',
