@@ -1,0 +1,52 @@
+# .gitignore para un proyecto web estático
+# Ignora archivos y carpetas comunes que no deben rastrearse
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Configuración de editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Archivos de sistema operativo
+Desktop.ini
+
+# Archivos de node (si usas npm para dependencias)
+node_modules/
+
+# Archivos de compilación y distribución
+/dist/
+/build/
+
+# Archivos personales
+*.env
+.env.*
+
+# Otros
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ignora imágenes de caché o temporales
+*.cache
+
+# Ignora archivos de VS Code
+.history/
+
+# Ignora archivos de backup
+*~
+*.bak
+
+# Ignora archivos de lock
+package-lock.json
+yarn.lock
+
+# Ignora archivos de configuración de sistema
+*.swp
