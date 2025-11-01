@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Psicología Clínica - Terapia individual y parejas" />
+  <title>Psicología Clínica</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a class="brand" href="#home"><i class="fa-solid fa-brain"></i> Psicoterapia</a>
+      <button id="navToggle" class="nav-toggle" aria-label="Abrir menú"><span></span><span></span><span></span></button>
+      <ul id="navMenu" class="nav">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#services">Enfoques</a></li>
+        <li><a href="#about">Sobre mí</a></li>
+        <li><a href="#contact">Contacto</a></li>
+        <li><button id="themeToggle" class="theme-toggle" aria-label="Tema"><i class="fa-solid fa-moon"></i></button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text" data-aos="fade-up">
+        <h1>Espacio seguro para tu bienestar emocional</h1>
+        <p>Terapia basada en evidencia, con foco en la empatía y el acompañamiento respetuoso.</p>
+        <div class="cta">
+          <a href="#contact" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Reservar sesión</a>
+          <a href="#services" class="btn btn-outline">Conocer enfoques</a>
+        </div>
+      </div>
+      <div class="hero-media" data-aos="fade-left">
+        <img src="https://via.placeholder.com/560x420?text=Psicologia" alt="Psicología" />
+      </div>
+    </div>
+  </header>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up"><i class="fa-solid fa-leaf"></i> Enfoques terapéuticos</h2>
+      <div class="grid cards" data-aos="fade-up" data-aos-delay="100">
+        <article class="card">
+          <h3><i class="fa-solid fa-heart"></i> Terapia Individual</h3>
+          <p>Ansiedad, depresión, estrés, duelo y crecimiento personal.</p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-hand-holding-heart"></i> Parejas</h3>
+          <p>Comunicación, vínculos, reparación y acuerdos.</p>
+        </article>
+        <article class="card">
+          <h3><i class="fa-solid fa-seedling"></i> Mindfulness</h3>
+          <p>Prácticas de atención plena para el día a día.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up"><i class="fa-solid fa-user"></i> Sobre mí</h2>
+      <p data-aos="fade-up" data-aos-delay="100">Psicólogo/a (U. X) con X años de experiencia clínica. Formación en terapia cognitivo-conductual y sistémica.</p>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container contact">
+      <div class="contact-info" data-aos="fade-right">
+        <h2 class="section-title"><i class="fa-solid fa-paper-plane"></i> Contacto</h2>
+        <p><i class="fa-solid fa-location-dot"></i> Las Condes, Santiago</p>
+        <p><i class="fa-solid fa-phone"></i> +56 9 0000 0000</p>
+        <p><i class="fa-solid fa-envelope"></i> contacto@psicoterapia.cl</p>
+      </div>
+      <form id="contactForm" class="contact-form" data-aos="fade-left">
+        <input type="text" name="name" placeholder="Nombre" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+        <div id="formMessage" class="form-message"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Psicoterapia — Todos los derechos reservados</p>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
