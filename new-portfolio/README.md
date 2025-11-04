@@ -1,20 +1,21 @@
-# 🚀 Portfolio Profesional
+# Portfolio Profesional — Laboratorio de Landing Pages
 
-Portfolio personal moderno y responsivo construido con HTML5, CSS3 y JavaScript vanilla.
+Portfolio personal moderno y responsivo construido con HTML5, CSS3 y JavaScript vanilla. Este proyecto también funciona como laboratorio técnico para crear, probar y documentar landing pages profesionales dirigidas a profesionales y pequeñas empresas en Chile.
 
-## ✨ Características
+## Características
 
-- ✅ Diseño moderno y profesional
-- ✅ 100% Responsivo (móvil, tablet, desktop)
-- ✅ Modo claro/oscuro
-- ✅ Animaciones suaves
-- ✅ Navegación intuitiva
-- ✅ Formulario de contacto
-- ✅ Filtro de proyectos
-- ✅ SEO optimizado
-- ✅ Alto rendimiento
+- Diseño moderno y profesional
+- 100% Responsivo (móvil, tablet, desktop)
+- Modo claro/oscuro implementado
+- Animaciones suaves con AOS
+- Navegación intuitiva
+- Formulario de contacto (en implementación con serverless + SendGrid)
+- Filtro de proyectos interactivo
+- SEO optimizado
+- Alto rendimiento
+- Sin frameworks ni librerías externas (vanilla JavaScript)
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 new-portfolio/
@@ -35,7 +36,7 @@ new-portfolio/
     └── CV.pdf         # Tu CV para descargar
 ```
 
-## 🎨 Secciones Incluidas
+## Secciones Incluidas
 
 1. **Hero/Inicio** - Presentación impactante con tu nombre y título
 2. **Sobre Mí** - Tu historia, estadísticas y datos personales
@@ -45,7 +46,7 @@ new-portfolio/
 6. **Contacto** - Formulario funcional e información de contacto
 7. **Footer** - Enlaces rápidos y redes sociales
 
-## 🛠️ Personalización
+## Personalización
 
 ### 1. Información Personal
 
@@ -134,9 +135,9 @@ Actualiza el timeline con tu experiencia real:
 </div>
 ```
 
-## 📧 Configurar Formulario de Contacto
+## Configurar Formulario de Contacto
 
-El formulario actualmente usa una simulación. Para hacerlo funcional:
+El formulario está en proceso de implementación usando funciones serverless y SendGrid. Opciones alternativas:
 
 ### Opción 1: FormSpree (Gratis y Fácil)
 
@@ -164,7 +165,7 @@ const response = await fetch('/api/contact', {
 });
 ```
 
-## 🚀 Despliegue
+## Despliegue
 
 Para poner tu portfolio en línea, considera las siguientes opciones, incluyendo algunas específicas para Chile:
 
@@ -215,7 +216,7 @@ Si deseas tener un dominio `.cl` o un hosting local, aquí hay algunas pautas:
 ○ **Pruebas**: Siempre prueba tu sitio después del despliegue para asegurarte de que todo funciona correctamente.
 
 
-## 🎯 Optimizaciones Recomendadas
+## Optimizaciones Recomendadas
 
 ### SEO
 
@@ -239,7 +240,7 @@ Si deseas tener un dominio `.cl` o un hosting local, aquí hay algunas pautas:
 - Añade ARIA labels donde sea necesario
 - Prueba con lectores de pantalla
 
-## 📚 Tecnologías Utilizadas
+## Tecnologías Utilizadas
 
 - **HTML5** - Estructura semántica
 - **CSS3** - Estilos modernos con variables CSS
@@ -248,21 +249,21 @@ Si deseas tener un dominio `.cl` o un hosting local, aquí hay algunas pautas:
 - **Google Fonts** - Tipografías (Poppins, Fira Code)
 - **AOS** - Animaciones al hacer scroll
 
-## 🔧 Herramientas de Desarrollo
+## Herramientas de Desarrollo
 
 - [VS Code](https://code.visualstudio.com/) - Editor recomendado
 - [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) - Extensión para desarrollo local
 - [Chrome DevTools](https://developer.chrome.com/docs/devtools/) - Debugging
 
-## 📱 Navegadores Soportados
+## Navegadores Soportados
 
-- ✅ Chrome (últimas 2 versiones)
-- ✅ Firefox (últimas 2 versiones)
-- ✅ Safari (últimas 2 versiones)
-- ✅ Edge (últimas 2 versiones)
-- ✅ Navegadores móviles modernos
+- Chrome (últimas 2 versiones)
+- Firefox (últimas 2 versiones)
+- Safari (últimas 2 versiones)
+- Edge (últimas 2 versiones)
+- Navegadores móviles modernos
 
-## 🎨 Paleta de Colores
+## Paleta de Colores
 
 | Color | Hex | Uso |
 |-------|-----|-----|
@@ -272,24 +273,22 @@ Si deseas tener un dominio `.cl` o un hosting local, aquí hay algunas pautas:
 | Dark | `#0f172a` | Fondos oscuros, texto |
 | Light | `#f9fafb` | Fondos claros |
 
-## 📝 Licencia
+## Licencia
 
-Este proyecto es de código abierto. Siéntete libre de usarlo y modificarlo para tu propio portfolio.
+Este proyecto es de código abierto bajo la licencia MIT. Puedes usar, modificar y distribuir este código libremente con atribución.
 
-## 🤝 Contribuciones
+## Contribuciones
 
-Si encuentras bugs o tienes sugerencias de mejora, ¡son bienvenidas!
+Si encuentras bugs o tienes sugerencias de mejora, abre un issue o envía un pull request.
 
-## 📞 Soporte
+## Contacto
 
-Si tienes preguntas sobre cómo personalizar este portfolio:
-
-- 📧 Email: tu@email.com
-- 💼 LinkedIn: [Tu Perfil]
-- 🐙 GitHub: [Tu Usuario]
+- **Autor:** Jorge Zuta (jorgez-tech)
+- **GitHub:** [@jorgez-tech](https://github.com/jorgez-tech)
+- **Email:** (pendiente de configuración)
 
 ---
 
-**¡Hecho con ❤️ y ☕!**
+**Nota:** Este documento evita el uso de emoticones para mantener un tono técnico y profesional.
 
-*Última actualización: Octubre 2025*
+**Última actualización:** Noviembre 2025

@@ -47,11 +47,11 @@ Todas son gratuitas para proyectos personales y permiten conectar un dominio pro
 - Diseño adaptable (se ve bien en celular, tablet y computadora)
 - Animaciones suaves al hacer scroll
 - Enlaces a redes sociales
+- Modo claro/oscuro
 
 ### Próximas
 
 - **Formulario de contacto funcional:** para que las personas me puedan escribir directamente desde el sitio
-- **Modo oscuro:** para mejorar la experiencia de lectura
 - **Optimización de imágenes:** para que cargue más rápido
 - **Dominio `.cl`:** para tener una dirección personalizada
 
@@ -61,25 +61,25 @@ Todas son gratuitas para proyectos personales y permiten conectar un dominio pro
 
 El proyecto está **en desarrollo activo**. La estructura principal ya está lista, pero estamos añadiendo funcionalidades nuevas cada semana.
 
-### Ya hecho ✅
+### Ya hecho
 
 - Diseño base del portafolio
 - Sección de proyectos
 - Diseño responsivo
 - Animaciones visuales
+- Modo claro/oscuro
 
-### En proceso 🚧
+### En proceso
 
 - Formulario de contacto funcional
 - Modal para ver imágenes grandes
 - Corrección de enlaces
 
-### Por hacer 📋
+### Por hacer
 
 - Comprar dominio `.cl`
 - Publicar el sitio en línea
 - Mejorar velocidad de carga
-- Agregar modo oscuro
 
 ---
 
@@ -96,15 +96,15 @@ Si encuentras algo que no funciona o tienes ideas para mejorar el proyecto, pued
 ## ¿Cómo se ve el proyecto organizado?
 
 ```
-📁 Carpeta principal
-├── 📁 .github/          ← Documentación del proyecto
-├── 📁 new-portfolio/    ← Código del portafolio
-│   ├── index.html       ← Página principal
-│   ├── 📁 css/          ← Estilos
-│   ├── 📁 js/           ← Interactividad
-│   ├── 📁 img/          ← Imágenes
-│   └── 📁 fonts/        ← Tipografías
-└── .gitignore           ← Archivos que Git ignora
+Carpeta principal
+├── .github/          <- Documentación del proyecto
+├── new-portfolio/    <- Código del portafolio
+│   ├── index.html    <- Página principal
+│   ├── css/          <- Estilos
+│   ├── js/           <- Interactividad
+│   ├── img/          <- Imágenes
+│   └── fonts/        <- Tipografías
+└── .gitignore        <- Archivos que Git ignora
 ```
 
 ---
@@ -117,9 +117,13 @@ El código es de **uso libre** (licencia MIT). Cualquiera puede usarlo, modifica
 
 ## Contacto
 
-- **Nombre:** Jorge Zúñiga
+- **Nombre:** Jorge Zuta (jorgez-tech)
 - **GitHub:** [@jorgez-tech](https://github.com/jorgez-tech)
 - **Correo:** (próximamente)
+
+---
+
+**Nota:** Este documento evita el uso de emoticones para mantener un tono profesional.
 
 ---
 
