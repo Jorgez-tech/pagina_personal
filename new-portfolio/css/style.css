@@ -527,6 +527,12 @@ img {
     box-shadow: var(--shadow-md);
 }
 
+.about-image video {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
 .about-stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
