@@ -27,47 +27,55 @@ El sitio está construido con:
 
 ---
 
-## ¿Dónde se va a publicar?
+## ¿Dónde está publicado?
 
-El plan es publicar el sitio en una de estas plataformas:
+El sitio está **publicado y en línea** en:
 
-- **Vercel** (recomendada)
-- **Netlify**
-- **GitHub Pages**
+- **Plataforma:** GitHub Pages
+- **URL:** [https://jorgez.tech](https://jorgez.tech)
+- **Dominio:** jorgez.tech (dominio personalizado)
+- **SSL:** Certificado HTTPS automático
 
-Todas son gratuitas para proyectos personales y permiten conectar un dominio propio.
+GitHub Pages es gratuito para proyectos de código abierto y permite conectar dominios personalizados con certificados SSL.
 
 ---
 
 ## ¿Qué funcionalidades tiene?
 
-### Actuales
+### Implementadas
 
 - Galería de proyectos con imágenes y enlaces a GitHub
 - Diseño adaptable (se ve bien en celular, tablet y computadora)
 - Animaciones suaves al hacer scroll
 - Enlaces a redes sociales
-- Modo claro/oscuro
+- Modo claro/oscuro con persistencia
+- Video de perfil en sección "Sobre Mí"
+- Línea de tiempo educativa y profesional
+- Publicado en dominio personalizado con HTTPS
 
 ### Próximas
 
 - **Formulario de contacto funcional:** para que las personas me puedan escribir directamente desde el sitio
 - **Optimización de imágenes:** para que cargue más rápido
-- **Dominio `.cl`:** para tener una dirección personalizada
+- **Blog o sección de artículos:** para compartir conocimiento técnico
 
 ---
 
 ## ¿En qué estado está el proyecto?
 
-El proyecto está **en desarrollo activo**. La estructura principal ya está lista, pero estamos añadiendo funcionalidades nuevas cada semana.
+El proyecto está **publicado y en producción**. El sitio está disponible en [jorgez.tech](https://jorgez.tech) y se actualiza regularmente con nuevas funcionalidades.
 
-### Ya hecho
+### Completado
 
 - Diseño base del portafolio
-- Sección de proyectos
-- Diseño responsivo
-- Animaciones visuales
-- Modo claro/oscuro
+- Sección de proyectos con grid responsivo
+- Diseño responsivo para todos los dispositivos
+- Animaciones y transiciones visuales
+- Modo claro/oscuro con persistencia
+- Video de perfil en sección "Sobre Mí"
+- Despliegue en GitHub Pages
+- Dominio personalizado con SSL (jorgez.tech)
+- Configuración DNS completa
 
 ### En proceso
 
@@ -77,9 +85,9 @@ El proyecto está **en desarrollo activo**. La estructura principal ya está lis
 
 ### Por hacer
 
-- Comprar dominio `.cl`
-- Publicar el sitio en línea
-- Mejorar velocidad de carga
+- Formulario de contacto funcional
+- Optimización de velocidad de carga
+- Sección de blog o artículos técnicos
 
 ---
 
@@ -95,15 +103,15 @@ Si encuentras algo que no funciona o tienes ideas para mejorar el proyecto, pued
 
 ## ¿Cómo se ve el proyecto organizado?
 
-```
+```text
 Carpeta principal
 ├── .github/          <- Documentación del proyecto
-├── new-portfolio/    <- Código del portafolio
-│   ├── index.html    <- Página principal
-│   ├── css/          <- Estilos
-│   ├── js/           <- Interactividad
-│   ├── img/          <- Imágenes
-│   └── fonts/        <- Tipografías
+├── index.html        <- Página principal del portafolio
+├── CNAME             <- Configuración de dominio personalizado
+├── css/              <- Estilos
+├── js/               <- Interactividad
+├── img/              <- Imágenes y videos
+├── fonts/            <- Tipografías personalizadas
 └── .gitignore        <- Archivos que Git ignora
 ```
 
@@ -119,7 +127,7 @@ El código es de **uso libre** (licencia MIT). Cualquiera puede usarlo, modifica
 
 - **Nombre:** Jorge Zuta (jorgez-tech)
 - **GitHub:** [@jorgez-tech](https://github.com/jorgez-tech)
-- **Correo:** (próximamente)
+- **Sitio web:** [jorgez.tech](https://jorgez.tech)
 
 ---
 
@@ -127,7 +135,7 @@ El código es de **uso libre** (licencia MIT). Cualquiera puede usarlo, modifica
 
 ---
 
-**Última actualización:** Noviembre 2025
+**Última actualización:** 6 de noviembre de 2025
 
 ---
 
