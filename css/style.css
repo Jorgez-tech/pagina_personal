@@ -567,6 +567,7 @@ img {
 
 .about-text h3 {
     font-size: 1.9rem;
+    margin-top: var(--spacing-xl);
     margin-bottom: var(--spacing-md);
 }
 
