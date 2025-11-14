@@ -480,6 +480,7 @@ img {
     z-index: 1;
     opacity: 0.25;
     filter: blur(10px);
+    display: none; /* Desactivado para evitar sombra no deseada */
 }
 
 .scroll-indicator {
@@ -515,7 +516,7 @@ img {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-2xl);
-    align-items: center;
+    align-items: start;
 }
 
 .about-image {
@@ -632,6 +633,12 @@ img {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: var(--spacing-sm);
+}
+
+@media (min-width: 1024px) {
+    .skill-items {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .skill-item {
