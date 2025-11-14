@@ -377,7 +377,7 @@ function initParticles() {
     if (!particlesContainer) return;
 
     // Crear partículas
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 100; i++) { //valor original 50
         createParticle(particlesContainer);
     }
 }
