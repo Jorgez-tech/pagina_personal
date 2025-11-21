@@ -3,9 +3,9 @@
    ============================================ */
 :root {
     /* Colores principales */
-    --primary-color: #6366f1;
-    --primary-dark: #4f46e5;
-    --primary-light: #818cf8;
+    --primary-color: #0047AB;
+    --primary-dark: #003785;
+    --primary-light: #3366CC;
     --secondary-color: #ec4899;
     --accent-color: #10b981;
 
@@ -16,7 +16,7 @@
     --bg-darker: #0b1120;
 
     /* Tipografía */
-    --text-primary: #1f2937;
+    --text-primary: #0047AB;
     --text-secondary: #6b7280;
     --text-light: #9ca3af;
     --text-white: #ffffff;
