@@ -298,19 +298,49 @@ function initProjectFilter() {
 // ============================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
 
     if (!form) return;
 
-    // Formspree maneja el envío directamente, solo añadimos feedback visual
-    form.addEventListener('submit', (e) => {
-        // No prevenir el envío, dejar que Formspree lo maneje
-        const formMessage = document.getElementById('formMessage');
-        formMessage.textContent = 'Enviando mensaje...';
-        formMessage.className = 'form-message info';
-    });
-}
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-function showFormMessage(message, type) {
+        const submitButton = form.querySelector('button[type="submit"]');
+        const buttonText = submitButton.innerHTML;
+
+        // Deshabilitar botón y mostrar estado de carga
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        formMessage.textContent = '';
+
+        try {
+            // Enviar formulario por AJAX
+            const formData = new FormData(form);
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Éxito
+                showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto. 😊', 'success');
+                form.reset();
+            } else {
+                throw new Error('Error en el envío');
+            }
+        } catch (error) {
+            // Error
+            showFormMessage('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.', 'error');
+        } finally {
+            // Restaurar botón
+            submitButton.disabled = false;
+            submitButton.innerHTML = buttonText;
+        }
+    });
+} function showFormMessage(message, type) {
     const formMessage = document.getElementById('formMessage');
     formMessage.textContent = message;
     formMessage.className = `form-message ${type}`;
