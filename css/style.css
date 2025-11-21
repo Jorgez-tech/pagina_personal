@@ -200,6 +200,16 @@ img {
     background-clip: text;
     font-family: var(--font-code);
     transition: transform var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.nav-logo {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
 }
 
 .nav-brand a:hover {
