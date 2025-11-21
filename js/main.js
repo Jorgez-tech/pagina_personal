@@ -298,49 +298,15 @@ function initProjectFilter() {
 // ============================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
-    const formMessage = document.getElementById('formMessage');
 
     if (!form) return;
 
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Obtener datos del formulario
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-
-        try {
-            // Aquí deberías hacer la petición a tu backend
-            // Por ahora simularemos una respuesta exitosa
-
-            // Simulación de envío
-            await new Promise(resolve => setTimeout(resolve, 1500));
-
-            // Mostrar mensaje de éxito
-            showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto.', 'success');
-            form.reset();
-
-            // Aquí iría tu código real de envío:
-            /*
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            });
-            
-            if (response.ok) {
-                showFormMessage('¡Mensaje enviado con éxito!', 'success');
-                form.reset();
-            } else {
-                throw new Error('Error al enviar');
-            }
-            */
-
-        } catch (error) {
-            showFormMessage('Hubo un error al enviar el mensaje. Intenta nuevamente.', 'error');
-        }
+    // Formspree maneja el envío directamente, solo añadimos feedback visual
+    form.addEventListener('submit', (e) => {
+        // No prevenir el envío, dejar que Formspree lo maneje
+        const formMessage = document.getElementById('formMessage');
+        formMessage.textContent = 'Enviando mensaje...';
+        formMessage.className = 'form-message info';
     });
 }
 
