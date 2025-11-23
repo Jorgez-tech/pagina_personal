@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Jorgez-tech/pagina_personal
   branch: master
 
 media_folder: "img"
