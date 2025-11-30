@@ -1,6 +1,6 @@
-# 📋 Guía de Personalización Rápida
+#  Guía de Personalización Rápida
 
-## 🎯 Pasos Esenciales (5 minutos)
+##  Pasos Esenciales (5 minutos)
 
 ### 1. Información Básica
 Abre `index.html` y busca/reemplaza:
@@ -37,7 +37,7 @@ En la sección "Sobre Mí", reemplaza el texto con tu propia historia:
 ### 5. Tus Proyectos
 Elimina o modifica los 6 proyectos de ejemplo con los tuyos.
 
-## 🎨 Personalización Avanzada
+##  Personalización Avanzada
 
 ### Cambiar Colores
 En `css/style.css`, línea ~5:
@@ -65,7 +65,7 @@ En `index.html`, línea ~17, reemplaza:
 - Elegantes: Playfair Display, Cormorant
 - Tech: JetBrains Mono, IBM Plex Mono
 
-## 📊 Checklist Completo
+##  Checklist Completo
 
 ```
 □ Nombre y título profesional
@@ -93,7 +93,7 @@ En `index.html`, línea ~17, reemplaza:
 □ Meta tags SEO actualizados
 ```
 
-## 🖼️ Creando Imágenes de Proyecto
+##  Creando Imágenes de Proyecto
 
 Si no tienes screenshots:
 
@@ -111,21 +111,21 @@ Si no tienes screenshots:
    - [TinyPNG](https://tinypng.com/)
    - [Squoosh](https://squoosh.app/)
 
-## 📝 Consejos de Contenido
+##  Consejos de Contenido
 
 ### Título Profesional
-❌ Malo: "Desarrollador"
-✅ Bueno: "Desarrollador Full Stack especializado en React y Node.js"
+ Malo: "Desarrollador"
+ Bueno: "Desarrollador Full Stack especializado en React y Node.js"
 
 ### Descripción Personal
-❌ Malo: "Soy desarrollador web."
-✅ Bueno: "Transformo ideas en experiencias digitales excepcionales, combinando diseño elegante con código eficiente."
+ Malo: "Soy desarrollador web."
+ Bueno: "Transformo ideas en experiencias digitales excepcionales, combinando diseño elegante con código eficiente."
 
 ### Descripción de Proyectos
-❌ Malo: "App de tareas"
-✅ Bueno: "Plataforma de gestión de tareas con sincronización en tiempo real, notificaciones push y análisis de productividad para equipos remotos."
+ Malo: "App de tareas"
+ Bueno: "Plataforma de gestión de tareas con sincronización en tiempo real, notificaciones push y análisis de productividad para equipos remotos."
 
-## 🚀 Publicar Tu Portfolio
+##  Publicar Tu Portfolio
 
 ### Opción más rápida: Netlify Drop
 1. Ve a https://app.netlify.com/drop
@@ -137,7 +137,7 @@ Si no tienes screenshots:
 2. Configúralo en Netlify o GitHub Pages
 3. Ejemplo: `tunombre.com` en lugar de `tunombre.netlify.app`
 
-## 🔍 Antes de Publicar
+##  Antes de Publicar
 
 **Revisa:**
 - [ ] Todas las imágenes cargan correctamente
