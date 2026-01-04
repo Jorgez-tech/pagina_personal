@@ -19,21 +19,21 @@ Portfolio personal moderno y responsivo construido con HTML5, CSS3 y JavaScript 
 
 ```
 new-portfolio/
-├── index.html          # Página principal
-├── css/
-│   └── style.css      # Estilos personalizados
-├── js/
-│   └── main.js        # Funcionalidades JavaScript
-├── img/
-│   ├── profile.jpg    # Foto de perfil
-│   ├── about.jpg      # Imagen sobre mí
-│   └── projects/      # Imágenes de proyectos
-│       ├── project1.jpg
-│       ├── project2.jpg
-│       └── ...
-├── fonts/             # Fuentes personalizadas (opcional)
-└── docs/
-    └── CV.pdf         # Tu CV para descargar
+- index.html          # Pagina principal
+- css/
+  - style.css      # Estilos personalizados
+- js/
+  - main.js        # Funcionalidades JavaScript
+- img/
+  - profile.jpg    # Foto de perfil
+  - about.jpg      # Imagen sobre mi
+  - projects/      # Imagenes de proyectos
+    - project1.jpg
+    - project2.jpg
+    - ...
+- fonts/             # Fuentes personalizadas (opcional)
+- docs/
+  - CV.pdf         # Tu CV para descargar
 ```
 
 ## Secciones Incluidas

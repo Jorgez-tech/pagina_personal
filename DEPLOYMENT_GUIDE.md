@@ -1,8 +1,8 @@
-# 🚀 Guía de Deployment - Sistema RAG Portfolio
+# Guia de Deployment - Sistema RAG Portfolio
 
-## ✅ Checklist Pre-Deployment
+## Checklist Pre-Deployment
 
-Antes de desplegar, asegúrate de tener:
+Antes de desplegar, asegurate de tener:
 - [ ] Cuenta en GitHub
 - [ ] Cuenta en Vercel (https://vercel.com)
 - [ ] API Key de OpenAI O Groq
@@ -11,7 +11,7 @@ Antes de desplegar, asegúrate de tener:
 
 ---
 
-## 📋 Paso 1: Obtener API Key
+## Paso 1: Obtener API Key
 
 ### Opción A: OpenAI (Recomendado)
 
@@ -36,7 +36,7 @@ Antes de desplegar, asegúrate de tener:
 
 ---
 
-## 📋 Paso 2: Conectar Vercel con GitHub
+## Paso 2: Conectar Vercel con GitHub
 
 1. Ve a https://vercel.com/login
 2. Click en **"Continue with GitHub"**
@@ -45,11 +45,11 @@ Antes de desplegar, asegúrate de tener:
 
 ---
 
-## 📋 Paso 3: Importar Proyecto en Vercel
+## Paso 3: Importar Proyecto en Vercel
 
-### Método A: Desde el Dashboard de Vercel
+### Metodo A: Desde el Dashboard de Vercel
 
-1. En Vercel, click en **"Add New..."** → **"Project"**
+1. En Vercel, click en **"Add New..."** - **"Project"**
 2. Busca el repositorio `pagina_personal`
 3. Click en **"Import"**
 4. **Framework Preset:** Selecciona "Other"
@@ -78,20 +78,20 @@ vercel --prod
 
 ---
 
-## 📋 Paso 4: Configurar Variables de Entorno
+## Paso 4: Configurar Variables de Entorno
 
 ### En Vercel Dashboard:
 
 1. Ve a tu proyecto en Vercel
-2. Click en **"Settings"** (pestaña superior)
-3. En el menú lateral, click en **"Environment Variables"**
+2. Click en **"Settings"** (pestana superior)
+3. En el menu lateral, click en **"Environment Variables"**
 4. Agregar variable:
 
    **Name:** `OPENAI_API_KEY` (o `GROQ_API_KEY`)
    
-   **Value:** Pega tu API key aquí
+   **Value:** Pega tu API key aqui
    
-   **Environments:** ✅ Production ✅ Preview ✅ Development (selecciona todos)
+   **Environments:** [OK] Production [OK] Preview [OK] Development (selecciona todos)
 
 5. Click en **"Save"**
 
@@ -109,13 +109,13 @@ vercel env add GROQ_API_KEY
 
 ---
 
-## 📋 Paso 5: Redesplegar (Importante)
+## Paso 5: Redesplegar (Importante)
 
-Después de agregar las variables de entorno, **debes redesplegar**:
+Despues de agregar las variables de entorno, **debes redesplegar**:
 
 ### Desde Dashboard:
 1. Ve a **"Deployments"**
-2. Click en los **"..."** del último deployment
+2. Click en los **"..."** del ultimo deployment
 3. Click en **"Redeploy"**
 
 ### Desde CLI:
@@ -125,23 +125,23 @@ vercel --prod
 
 ---
 
-## 📋 Paso 6: Verificar que Funciona
+## Paso 6: Verificar que Funciona
 
 1. Abre tu sitio: `https://tu-proyecto.vercel.app`
-2. Busca el botón flotante 💬 en la esquina inferior derecha
+2. Busca el boton flotante en la esquina inferior derecha
 3. Click para abrir el chat
 4. Escribe una pregunta de prueba:
-   - "Muéstrame tus repositorios"
-   - "¿Qué tecnologías usas?"
-   - "Háblame de tu experiencia"
+   - "Muestrame tus repositorios"
+   - "Que tecnologias usas?"
+   - "Hablame de tu experiencia"
 
-### ✅ Funciona si:
+### [OK] Funciona si:
 - El chat se abre correctamente
 - Ves el indicador de "escribiendo..." (3 puntos animados)
-- Recibes una respuesta en español
+- Recibes una respuesta en espanol
 - La respuesta menciona repos reales de GitHub
 
-### ❌ Si hay errores:
+### [ERROR] Si hay errores:
 
 **Error: "API Key no configurada"**
 - Verifica que agregaste la variable en Vercel Settings
@@ -162,24 +162,24 @@ vercel --prod
 
 ---
 
-## 📋 Paso 7: Configurar Dominio Personalizado (Opcional)
+## Paso 7: Configurar Dominio Personalizado (Opcional)
 
 Si quieres usar tu propio dominio:
 
-1. En Vercel, ve a **Settings** → **Domains**
+1. En Vercel, ve a **Settings** - **Domains**
 2. Agrega tu dominio (ej: `jorgezuta.com`)
 3. Sigue las instrucciones DNS que te proporciona Vercel
-4. Espera propagación (5-30 minutos)
+4. Espera propagacion (5-30 minutos)
 
 ---
 
-## 🔍 Monitoreo y Mantenimiento
+## Monitoreo y Mantenimiento
 
 ### Verificar Uso de API
 
 **OpenAI:**
 - Dashboard: https://platform.openai.com/usage
-- Revisa cuántos tokens consumes
+- Revisa cuantos tokens consumes
 - Configura alertas de gasto
 
 **Groq:**
@@ -189,46 +189,46 @@ Si quieres usar tu propio dominio:
 ### Verificar Funciones de Vercel
 
 1. Ve a tu proyecto en Vercel
-2. **Analytics** → **Functions**
+2. **Analytics** - **Functions**
 3. Revisa:
-   - Invocaciones por día
+   - Invocaciones por dia
    - Errores (si hay)
    - Latencia promedio
 
 ### GitHub API Rate Limit
 
-El sistema usa caché de 30 minutos, por lo que no deberías tener problemas. Para verificar tu límite:
+El sistema usa cache de 30 minutos, por lo que no deberias tener problemas. Para verificar tu limite:
 
 ```bash
 curl https://api.github.com/rate_limit
 ```
 
-Deberías tener 60 requests/hora (sin autenticación).
+Deberias tener 60 requests/hora (sin autenticacion).
 
 ---
 
-## 🎯 Siguiente Paso: Hacer Merge
+## Siguiente Paso: Hacer Merge
 
 Una vez que verifiques que **TODO FUNCIONA CORRECTAMENTE**:
 
 1. Ve al Pull Request en GitHub
 2. Pide a alguien que revise (o auto-revisa)
 3. Click en **"Merge Pull Request"**
-4. Vercel automáticamente desplegará a producción
+4. Vercel automaticamente desplegara a produccion
 
 **IMPORTANTE:** No hagas merge hasta estar 100% seguro de que funciona.
 
 ---
 
-## 🆘 Soporte
+## Soporte
 
 Si tienes problemas:
 
 1. **Revisa logs en Vercel:**
-   - Deployments → Click en el deployment → "Runtime Logs"
+   - Deployments - Click en el deployment - "Runtime Logs"
 
 2. **Revisa consola del navegador:**
-   - F12 → Console (busca errores en rojo)
+   - F12 - Console (busca errores en rojo)
 
 3. **Contacto:**
    - Abre un issue en GitHub
@@ -236,13 +236,13 @@ Si tienes problemas:
 
 ---
 
-## 📚 Recursos Adicionales
+## Recursos Adicionales
 
-- [Documentación Vercel](https://vercel.com/docs)
+- [Documentacion Vercel](https://vercel.com/docs)
 - [GitHub API Docs](https://docs.github.com/en/rest)
 - [OpenAI API Docs](https://platform.openai.com/docs)
 - [Groq API Docs](https://console.groq.com/docs)
 
 ---
 
-**¡Éxito con tu deployment! 🚀**
+**Exito con tu deployment!**

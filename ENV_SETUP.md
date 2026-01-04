@@ -41,16 +41,16 @@ vercel env add GROQ_API_KEY
 
 ### Método 2: Dashboard de Vercel
 1. Ve a tu proyecto en https://vercel.com/dashboard
-2. Settings → Environment Variables
+2. Settings - Environment Variables
 3. Agrega la variable:
    - **Name:** `OPENAI_API_KEY` o `GROQ_API_KEY`
    - **Value:** Tu API key
    - **Environment:** Production, Preview, Development (selecciona todos)
 4. Click en "Save"
 
-## Configuración Local (Desarrollo)
+## Configuracion Local (Desarrollo)
 
-Crea un archivo `.env.local` en la raíz del proyecto:
+Crea un archivo `.env.local` en la raiz del proyecto:
 
 ```bash
 # .env.local
@@ -59,11 +59,11 @@ OPENAI_API_KEY=sk-tu-api-key-aqui
 GROQ_API_KEY=gsk_tu-api-key-aqui
 ```
 
-**IMPORTANTE:** Nunca subas este archivo a Git. Ya está incluido en `.gitignore`
+**IMPORTANTE:** Nunca subas este archivo a Git. Ya esta incluido en `.gitignore`
 
-## Verificación
+## Verificacion
 
-Para verificar que las variables están configuradas correctamente:
+Para verificar que las variables estan configuradas correctamente:
 
 ```bash
 # En Vercel
@@ -78,16 +78,16 @@ echo $GROQ_API_KEY
 ## Prioridad
 
 El sistema verifica las API keys en este orden:
-1. Si existe `GROQ_API_KEY` → Usa Groq (Llama 3.1)
-2. Si existe `OPENAI_API_KEY` → Usa OpenAI (GPT-4o-mini)
-3. Si ninguna existe → Retorna error
+1. Si existe `GROQ_API_KEY` - Usa Groq (Llama 3.1)
+2. Si existe `OPENAI_API_KEY` - Usa OpenAI (GPT-4o-mini)
+3. Si ninguna existe - Retorna error
 
 ## Seguridad
 
-✅ **Nunca expongas las API keys en el frontend**
-✅ **Usa variables de entorno del servidor (Vercel Functions)**
-✅ **Implementa rate limiting (ya incluido en el código)**
-✅ **Monitorea el uso desde los dashboards de OpenAI/Groq**
+[IMPORTANTE] **Nunca expongas las API keys en el frontend**
+[IMPORTANTE] **Usa variables de entorno del servidor (Vercel Functions)**
+[IMPORTANTE] **Implementa rate limiting (ya incluido en el codigo)**
+[IMPORTANTE] **Monitorea el uso desde los dashboards de OpenAI/Groq**
 
 ## Solución de Problemas
 
