@@ -8,7 +8,7 @@ class ChatWidget {
         this.conversationHistory = [];
         this.isProcessing = false;
         this.apiEndpoint = '/api/chat'; // Vercel serverless function
-        
+
         this.init();
     }
 
@@ -88,7 +88,7 @@ class ChatWidget {
 
         toggle.addEventListener('click', () => this.toggleChat());
         form.addEventListener('submit', (e) => this.handleSubmit(e));
-        
+
         suggestedBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const message = btn.getAttribute('data-message');
@@ -119,7 +119,7 @@ class ChatWidget {
 
     async handleSubmit(e) {
         e.preventDefault();
-        
+
         const input = document.getElementById('chatInput');
         const message = input.value.trim();
 
@@ -137,7 +137,7 @@ class ChatWidget {
 
         // Agregar mensaje del usuario
         this.addMessage(message, 'user');
-        
+
         // Mostrar indicador de escritura
         this.showTypingIndicator();
 
@@ -159,10 +159,10 @@ class ChatWidget {
             }
 
             const data = await response.json();
-            
+
             // Remover indicador de escritura
             this.removeTypingIndicator();
-            
+
             // Agregar respuesta del bot
             this.addMessage(data.reply, 'bot');
 
@@ -194,20 +194,20 @@ class ChatWidget {
 
     addMessage(content, sender, isError = false) {
         const messagesContainer = document.getElementById('chatMessages');
-        
+
         // Remover mensaje de bienvenida si existe
         const welcome = messagesContainer.querySelector('.welcome-message');
         if (welcome) {
             welcome.remove();
         }
 
-        const time = new Date().toLocaleTimeString('es-CL', { 
-            hour: '2-digit', 
-            minute: '2-digit' 
+        const time = new Date().toLocaleTimeString('es-CL', {
+            hour: '2-digit',
+            minute: '2-digit'
         });
 
-        const avatarSrc = sender === 'user' 
-            ? 'img/foto_ejecutivo.jpg' 
+        const avatarSrc = sender === 'user'
+            ? 'img/foto_ejecutivo.jpg'
             : 'img/logo2.png';
 
         const messageHTML = `
@@ -235,7 +235,7 @@ class ChatWidget {
 
         // Convertir negritas
         formatted = formatted.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        
+
         // Convertir saltos de línea
         formatted = formatted.replace(/\n/g, '<br>');
 
@@ -255,7 +255,7 @@ class ChatWidget {
                 </div>
             </div>
         `;
-        
+
         document.getElementById('chatMessages').insertAdjacentHTML('beforeend', indicator);
         this.scrollToBottom();
     }
