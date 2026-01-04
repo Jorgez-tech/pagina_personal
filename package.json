@@ -2,7 +2,6 @@
   "name": "portfolio-rag-chat",
   "version": "1.0.0",
   "description": "Portfolio personal con sistema RAG integrado que consulta GitHub en tiempo real",
-  "type": "module",
   "scripts": {
     "dev": "vercel dev",
     "deploy": "vercel --prod"

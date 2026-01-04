@@ -22,8 +22,12 @@ class ChatWidget {
         const widgetHTML = `
             <div class="chat-widget" id="chatWidget">
                 <button class="chat-toggle" id="chatToggle" aria-label="Abrir chat">
-                    <span class="chat-icon">💬</span>
-                    <span class="close-icon">✕</span>
+                    <span class="chat-icon">
+                        <i class="fas fa-comments"></i>
+                    </span>
+                    <span class="close-icon">
+                        <i class="fas fa-times"></i>
+                    </span>
                 </button>
                 
                 <div class="chat-container">
@@ -42,16 +46,16 @@ class ChatWidget {
                     
                     <div class="suggested-questions" id="suggestedQuestions">
                         <button class="suggestion-btn" data-message="Muéstrame tus repositorios de GitHub">
-                            📂 Ver repositorios
+                            <i class="fas fa-folder"></i> Ver repositorios
                         </button>
                         <button class="suggestion-btn" data-message="¿Qué tecnologías dominas?">
-                            💻 Tecnologías
+                            <i class="fas fa-code"></i> Tecnologías
                         </button>
                         <button class="suggestion-btn" data-message="Háblame de tu experiencia">
-                            💼 Experiencia
+                            <i class="fas fa-briefcase"></i> Experiencia
                         </button>
                         <button class="suggestion-btn" data-message="¿Cuál es tu proyecto más destacado?">
-                            ⭐ Proyectos destacados
+                            <i class="fas fa-star"></i> Proyectos destacados
                         </button>
                     </div>
                     
@@ -106,7 +110,7 @@ class ChatWidget {
     showWelcomeMessage() {
         const welcomeHTML = `
             <div class="welcome-message">
-                <h3>👋 ¡Hola! Soy el asistente de Jorge</h3>
+                <h3>Hola! Soy el asistente de Jorge</h3>
                 <p>Puedo contarte sobre sus proyectos en GitHub, tecnologías, experiencia y más. ¿En qué puedo ayudarte?</p>
             </div>
         `;

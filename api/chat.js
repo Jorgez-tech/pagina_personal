@@ -115,17 +115,17 @@ PERFIL PROFESIONAL:
 REPOSITORIOS ACTUALIZADOS (${new Date().toLocaleString('es-CL')}):
 
 ${githubRepos.map((repo, index) => `
-${index + 1}. 📦 ${repo.name}
-   🔗 ${repo.url}
-   💻 Lenguaje principal: ${repo.language}
-   ⭐ ${repo.stars} estrellas | 🔀 ${repo.forks} forks
-   📅 Última actualización: ${new Date(repo.updated).toLocaleDateString('es-CL')}
-   ${repo.topics.length > 0 ? `🏷️ Topics: ${repo.topics.join(', ')}` : ''}
-   📝 Descripción: ${repo.description}
+${index + 1}. REPO: ${repo.name}
+   URL: ${repo.url}
+   Lenguaje principal: ${repo.language}
+   Stars: ${repo.stars} | Forks: ${repo.forks}
+   Ultima actualizacion: ${new Date(repo.updated).toLocaleDateString('es-CL')}
+   ${repo.topics.length > 0 ? `Topics: ${repo.topics.join(', ')}` : ''}
+   Descripcion: ${repo.description}
    
    README:
    ${repo.readme}
-   ${'─'.repeat(80)}
+   ${'-'.repeat(80)}
 `).join('\n')}
 
 STACK TECNOLÓGICO:
@@ -155,10 +155,10 @@ INSTRUCCIONES IMPORTANTES:
 5. Si no sabes algo, recomienda contactar directamente a Jorge en jzuta309@gmail.com
 6. NUNCA inventes información que no esté en el contexto
 7. Sé transparente: menciona que eres un asistente IA que consulta información real de GitHub
-8. Usa emojis ocasionalmente para hacer las respuestas más amigables (máximo 2-3 por mensaje)
+8. Sé amigable pero profesional, evita usar emojis
 
 FORMATO PREFERIDO PARA MENCIONAR PROYECTOS:
-"El proyecto **[NOMBRE]** está disponible en GitHub: [URL]
+"El proyecto [NOMBRE] está disponible en GitHub: [URL]
 Desarrollado con [TECNOLOGÍAS], se enfoca en [DESCRIPCIÓN BREVE]."
 
 CONTEXTO ACTUALIZADO DE GITHUB:
@@ -189,7 +189,7 @@ function checkRateLimit(ip) {
 /**
  * Handler principal
  */
-export default async function handler(req, res) {
+async function handler(req, res) {
   // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
@@ -292,3 +292,5 @@ export default async function handler(req, res) {
     });
   }
 }
+
+module.exports = handler;
