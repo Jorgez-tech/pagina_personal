@@ -127,15 +127,16 @@ Si no tienes screenshots:
 
 ##  Publicar Tu Portfolio
 
-### Opción más rápida: Netlify Drop
-1. Ve a https://app.netlify.com/drop
-2. Arrastra la carpeta `new-portfolio`
-3. ¡Listo! Comparte tu URL
+### Opción más rápida: GitHub Pages
+1. Sube tu proyecto a GitHub
+2. Ve a Settings → Pages
+3. Selecciona la rama `main` y carpeta `/` (root)
+4. ¡Listo! Tu sitio estará en `https://tu-usuario.github.io/nombre-repo/`
 
 ### Dominio personalizado (opcional)
 1. Compra un dominio en [Namecheap](https://namecheap.com) (~$10/año)
-2. Configúralo en Netlify o GitHub Pages
-3. Ejemplo: `tunombre.com` en lugar de `tunombre.netlify.app`
+2. Configúralo en GitHub Pages
+3. Ejemplo: `tunombre.com` en lugar de `tunombre.github.io`
 
 ##  Antes de Publicar
 

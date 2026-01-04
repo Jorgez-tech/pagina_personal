@@ -179,11 +179,6 @@ Estas opciones son ideales para empezar y no requieren conocimientos avanzados d
 3. En "Source" (Fuente), selecciona la rama `main` (o la que uses para tu código) y la carpeta `/ (root)` o `/docs` si tu `index.html` está allí.
 4. Guarda los cambios y espera unos minutos. Tu sitio estará disponible en una URL como `https://tu-usuario.github.io/nombre-del-repositorio/`.
 
-#### Netlify
-1. Crea una cuenta gratuita en [Netlify](https://www.netlify.com/).
-2. Conecta tu cuenta de GitHub (o arrastra la carpeta `new-portfolio` directamente a la interfaz de Netlify).
-3. Netlify detectará automáticamente tu proyecto y lo desplegará. Obtendrás una URL gratuita.
-
 #### Vercel
 1. Crea una cuenta gratuita en [Vercel](https://vercel.com/).
 2. Conecta tu cuenta de GitHub.
@@ -211,7 +206,7 @@ Si deseas tener un dominio `.cl` o un hosting local, aquí hay algunas pautas:
 
 ### ♪ Consejos Adicionales
 
-○ **HTTPS**: Asegúrate de que tu sitio use HTTPS. La mayoría de los servicios de hosting y plataformas como Netlify/Vercel lo configuran automáticamente. Si usas un hosting propio, puedes instalar certificados SSL gratuitos con Let's Encrypt.
+○ **HTTPS**: Asegúrate de que tu sitio use HTTPS. La mayoría de los servicios de hosting y plataformas como GitHub Pages o Vercel lo configuran automáticamente. Si usas un hosting propio, puedes instalar certificados SSL gratuitos con Let's Encrypt.
 ○ **Actualizaciones**: Cada vez que realices cambios en tu código, deberás subir las nuevas versiones a tu hosting o repositorio de GitHub para que se reflejen en línea.
 ○ **Pruebas**: Siempre prueba tu sitio después del despliegue para asegurarte de que todo funciona correctamente.
 
