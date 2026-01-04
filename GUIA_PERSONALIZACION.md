@@ -148,7 +148,7 @@ Si no tienes screenshots:
 - [ ] No hay errores en la consola del navegador
 - [ ] Meta tags actualizados con tu información
 
-## 💡 Ideas Extra
+## Ideas Extra
 
 ### Añadir una sección de Blog
 Si quieres compartir conocimientos, considera añadir un blog usando:
