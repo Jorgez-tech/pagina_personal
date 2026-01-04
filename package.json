@@ -1,0 +1,23 @@
+{
+  "name": "portfolio-rag-chat",
+  "version": "1.0.0",
+  "description": "Portfolio personal con sistema RAG integrado que consulta GitHub en tiempo real",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "portfolio",
+    "rag",
+    "chatbot",
+    "github",
+    "ai"
+  ],
+  "author": "Jorge Zuta",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@vercel/node": "^3.0.0"
+  }
+}
