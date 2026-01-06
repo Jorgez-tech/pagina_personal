@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Jorge Zuta</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --light-bg: #f4f7f6;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            margin: 0;
+            padding: 40px;
+            font-size: 14px; /* Tamaño óptimo para lectura en pantalla y PDF */
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .header-content h1 {
+            margin: 0;
+            font-size: 2.2em;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .header-content .role {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        .header-content .location {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .contact-links {
+            text-align: right;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        .contact-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.1em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 10px;
+            text-align: justify;
+        }
+
+        /* Skills Tags */
+        .skill-category {
+            margin-bottom: 15px;
+        }
+        .skill-category strong {
+            display: block;
+            margin-bottom: 5px;
+            color: #444;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            background-color: var(--light-bg);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            color: #444;
+            border: 1px solid #e1e1e1;
+        }
+
+        /* Lists */
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Contact Footer Box */
+        .contact-footer {
+            background-color: #eaf2f8;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .contact-footer h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.1em;
+        }
+        .contact-footer p {
+            text-align: left;
+            margin-bottom: 0;
+        }
+        .contact-footer a {
+            color: var(--accent-color);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Print Optimizations */
+        @media print {
+            body { padding: 0; font-size: 12pt; }
+            .container { width: 100%; max-width: none; }
+            header { flex-direction: column; }
+            .contact-links { text-align: left; margin-top: 10px; }
+            a { text-decoration: none; color: #000; }
+            .tag { border: 1px solid #ccc; background: none; }
+            .contact-footer { background: none; border-left: 2px solid #000; padding: 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Jorge Zuta</h1>
+                <div class="role">Desarrollador Full Stack</div>
+                <div class="location">Santiago, Chile</div>
+            </div>
+            <div class="contact-links">
+                <a href="https://jorgez.tech">jorgez.tech</a>
+                <a href="https://github.com/jorgez-tech">github.com/jorgez-tech</a>
+                <a href="mailto:jzuta309@gmail.com">jzuta309@gmail.com</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>Perfil Profesional</h2>
+            <p>
+                Desarrollador Full Stack con más de tres años de experiencia en el diseño y construcción de aplicaciones web escalables y orientadas al usuario. 
+                Comprometido con la escritura de código limpio, el uso de buenas prácticas y el aprendizaje continuo de tecnologías actuales. 
+                Orientado a resultados y disponible para nuevos desafíos profesionales o proyectos colaborativos.
+            </p>
+            <p>
+                <em>Cursando actualmente Técnico Universitario en Programación en la Universidad Mayor, Chile (2024 – 2026).</em>
+            </p>
+        </section>
+
+        <section>
+            <h2>Competencias Técnicas</h2>
+            
+            <div class="skill-category">
+                <strong>Desarrollo Frontend</strong>
+                <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript (ES6+)</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Vue.js</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <strong>Desarrollo Backend</strong>
+                <div class="tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Django</span>
+                    <span class="tag">PHP</span>
+                    <span class="tag">MongoDB</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">MySQL</span>
+                    <span class="tag">Firebase</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <strong>Herramientas y Entorno</strong>
+                <div class="tags">
+                    <span class="tag">Git</span>
+                    <span class="tag">GitHub</span>
+                    <span class="tag">Docker</span>
+                    <span class="tag">Figma</span>
+                    <span class="tag">Visual Studio Code</span>
+                    <span class="tag">Terminal</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formación Académica</h2>
+            <div style="margin-bottom: 10px;">
+                <strong>Técnico Universitario en Programación</strong><br>
+                <em>Universidad Mayor – Santiago, Chile | 2024 – 2026 (en curso)</em>
+            </div>
+            <p style="font-size: 0.95em; color: #555;">
+                Enfoque principal en desarrollo web full stack, frameworks modernos y metodologías de programación estructurada.
+            </p>
+        </section>
+
+        <section>
+            <h2>Idiomas</h2>
+            <ul>
+                <li><strong>Español:</strong> Nativo</li>
+                <li><strong>Inglés:</strong> Intermedio (lectura técnica fluida)</li>
+            </ul>
+        </section>
+
+        <!-- Nota de Contacto y Privacidad -->
+        <div class="contact-footer">
+            <h3>Contacto</h3>
+            <p>
+                Para consultas profesionales, referencias laborales, disponibilidad o información adicional, 
+                le invito cordialmente a completar el formulario de contacto en:<br><br>
+                <a href="https://jorgez.tech/#contacto">jorgez.tech/#contacto</a>
+            </p>
+            <p style="margin-top: 10px;">
+                Responderé a la brevedad. Gracias por su interés.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
