@@ -1041,8 +1041,8 @@ img {
 
 .form-message.error {
     background: rgba(239, 68, 68, 0.1);
-    color: #eee8e8;
-    border: 1px solid #ef4444;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
     display: block;
 }
 
