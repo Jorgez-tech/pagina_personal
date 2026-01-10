@@ -494,10 +494,10 @@ window.addEventListener('scroll', throttle(() => {
 // Console Message (Opcional)
 // ============================================
 console.log(
-    '%c¡Hola Developer! 👋',
+    '%c¡Hola Developer! ',
     'color: #4749baff; font-size: 20px; font-weight: bold;'
 );
 console.log(
-    '%c¿Curioseando el código? ¡Me gusta! 😎\nSi quieres colaborar, ¡contáctame!',
+    '%c¿Curioseando el código? ¡Me gusta! \nSi quieres colaborar, ¡contáctame!',
     'color: #64748b; font-size: 14px;'
 );
