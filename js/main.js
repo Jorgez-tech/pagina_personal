@@ -326,7 +326,7 @@ function initContactForm() {
 
             if (response.ok) {
                 // Éxito
-                showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto. 😊', 'success');
+                showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto.', 'success');
                 form.reset();
             } else {
                 throw new Error('Error en el envío');
