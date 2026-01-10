@@ -1030,33 +1030,34 @@ img {
     padding: var(--spacing-md);
     border-radius: var(--radius-md);
     display: none;
+    transition: opacity var(--transition-base), transform var(--transition-base);
 }
 
 .form-message.success {
-    background: var(--bg-primary);
-    color: var(--primary-color);
-    border: 1px solid var(--primary-color);
+    background: rgba(16, 185, 129, 0.1);
+    color: #047857;
+    border: 1px solid #10b981;
     display: block;
 }
 
 .form-message.error {
-    background: var(--bg-primary);
-    color: #ef4444;
+    background: rgba(239, 68, 68, 0.1);
+    color: #991b1b;
     border: 1px solid #ef4444;
     display: block;
 }
 
 /* Dark mode overrides */
 [data-theme="dark"] .form-message.success {
-    background: rgba(16, 185, 129, 0.1);
-    color: var(--text-white);
-    border: 1px solid var(--text-white);
+    background: rgba(16, 185, 129, 0.15);
+    color: #6ee7b7;
+    border: 1px solid #34d399;
 }
 
 [data-theme="dark"] .form-message.error {
-    background: rgba(239, 68, 68, 0.1);
-    color: var(--text-white);
-    border: 1px solid var(--text-white);
+    background: rgba(239, 68, 68, 0.15);
+    color: #fca5a5;
+    border: 1px solid #f87171;
 }
 
 /* ============================================
