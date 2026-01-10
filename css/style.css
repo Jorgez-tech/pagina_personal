@@ -1049,15 +1049,15 @@ img {
 
 /* Dark mode overrides */
 [data-theme="dark"] .form-message.success {
-    background: rgba(16, 185, 129, 0.15);
-    color: #6ee7b7;
-    border: 1px solid #34d399;
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--text-white);
+    border: 1px solid var(--text-white);
 }
 
 [data-theme="dark"] .form-message.error {
-    background: rgba(239, 68, 68, 0.15);
-    color: #fca5a5;
-    border: 1px solid #f87171;
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--text-white);
+    border: 1px solid var(--text-white);
 }
 
 /* ============================================
