@@ -173,6 +173,7 @@ img {
     display: flex;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.92);
+    -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     box-shadow: var(--shadow-sm);
     z-index: 1000;
@@ -1064,7 +1065,6 @@ img {
 [data-theme="dark"] .form-group textarea:not(:placeholder-shown) + label {
     background: var(--bg-secondary);
     color: var(--primary-light);
-}
     top: -10px;
     left: 10px;
     font-size: 0.875rem;

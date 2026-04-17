@@ -169,11 +169,11 @@ function initTypingEffect() {
     if (!typingText) return;
 
     const texts = [
-        'Desarrollador Full Stack',
-        'Frontend Developer',
-        'Backend Developer',
-        'UI/UX Enthusiast',
-        'Problem Solver'
+        'Desarrollador Backend',
+        'C#/.NET Developer',
+        'Python & Django Developer',
+        'Diseño de sistemas claros',
+        'Aprendizaje continuo'
     ];
 
     let textIndex = 0;
