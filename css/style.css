@@ -1064,7 +1064,6 @@ img {
 [data-theme="dark"] .form-group textarea:not(:placeholder-shown) + label {
     background: var(--bg-secondary);
     color: var(--primary-light);
-}
     top: -10px;
     left: 10px;
     font-size: 0.875rem;

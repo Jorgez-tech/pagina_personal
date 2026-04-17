@@ -169,9 +169,9 @@ function initTypingEffect() {
     if (!typingText) return;
 
     const texts = [
-        'Desarrollador Backend en transición',
+        'Desarrollador Backend',
         'C#/.NET Developer',
-        'Django Developer',
+        'Python & Django Developer',
         'Diseño de sistemas claros',
         'Aprendizaje continuo'
     ];
