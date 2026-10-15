@@ -1,48 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio profesional de Jorge Zuta - Desarrollador Backend con foco en C#/.NET y Python/Django.">
-    <meta name="keywords" content="desarrollador backend, c#, .net, django, jorge zuta, portfolio, programador, chile, arquitectura de software">
+    <meta name="description"
+        content="Portfolio profesional de Jorge Zuta - Desarrollador Backend con foco en C#/.NET y Python/Django.">
+    <meta name="keywords"
+        content="desarrollador backend, c#, .net, django, jorge zuta, portfolio, programador, chile, arquitectura de software">
     <meta name="author" content="Jorge Zuta">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://jorgez-tech.github.io/pagina_personal/">
-    
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://jorgez-tech.github.io/pagina_personal/">
     <meta property="og:title" content="Jorge Zuta - Desarrollador Backend">
-    <meta property="og:description" content="Portfolio profesional de Jorge Zuta con foco en C#/.NET y Django, diseño de sistemas claros y documentación como parte del código.">
+    <meta property="og:description"
+        content="Portfolio profesional de Jorge Zuta con foco en C#/.NET y Django, diseño de sistemas claros y documentación como parte del código.">
     <meta property="og:image" content="https://jorgez-tech.github.io/pagina_personal/img/og-image.jpg">
-    
+
     <title>Jorge Zuta | Desarrollador Backend</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/logo2.png">
-    
-    <!-- Google Fonts -->
+
+    <!-- Favicon Institucional Aprobado (H-02) -->
+    <link rel="icon" type="image/png" sizes="64x64" href="img/favicon-logo.png">
+    <link rel="alternate icon" type="image/png" href="img/logo2.png">
+    <link rel="apple-touch-icon" href="img/logo2.png">
+
+    <!-- CDN Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-    
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-    
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
+    <!-- Capa de Fondo Inteligente: Cielo con Estrellas Dinámicas (M-01, M-02) -->
+    <div class="stars-layer" id="starsLayer" aria-hidden="true"></div>
+
     <!-- Navegación -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <div class="nav-brand">
-                <a href="#home">&lt; Jorge Zuta /&gt;</a>
+                <a href="#home">
+                    <img src="img/logo2.png" alt="Jorge Zuta" class="brand-logo" width="36" height="36">
+                    <span class="brand-text">&lt; Jorge Zuta /&gt;</span>
+                </a>
             </div>
-            
+
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-list">
                     <li><a href="#home" class="nav-link active">Inicio</a></li>
@@ -56,7 +69,7 @@
                     <i class="fas fa-moon"></i>
                 </button>
             </div>
-            
+
             <div class="nav-toggle" id="navToggle">
                 <span></span>
                 <span></span>
@@ -65,626 +78,714 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-particles" id="particles"></div>
-        <div class="container">
-            <div class="hero-content" data-aos="fade-up">
-                <p class="hero-greeting"> Hola, soy </p>
-                <h1 class="hero-title">Jorge Zuta</h1>
-                <h2 class="hero-subtitle">
-                    <span class="typing-text">Desarrollador Backend</span>
-                </h2>
-                <p class="hero-description">
-                    Desarrollador Backend con experiencia en C#/.NET y Python/Django.
-                    Me interesa diseñar sistemas claros, documentar como parte del código y aprender de forma continua.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">
-                        <i class="fas fa-envelope"></i> Contactar
-                    </a>
-                    <a href="#projects" class="btn btn-secondary">
-                        <i class="fas fa-briefcase"></i> Ver Proyectos
-                    </a>
-                    <a href="docs/CV-JorgeZuta.pdf" download class="btn btn-outline">
-                        <i class="fas fa-download"></i> Descargar CV
-                    </a>
-                </div>
-                <div class="hero-social">
-                    <a href="https://github.com/jorgez-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jorge-zuta-23b380152/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://www.instagram.com/jorgezuta/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="mailto:jzuta309@gmail.com" aria-label="Email">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                </div>
-            </div>
-            <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
-                <div class="image-wrapper">
-                    <img src="img/foto_ejecutivo.jpg" alt="Jorge Zuta - Desarrollador Backend">
-                    <div class="image-decoration"></div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <div class="mouse">
-                    <div class="wheel"></div>
-                </div>
-            </a>
-        </div>
-    </section>
+    <!-- Landmark Principal para Accesibilidad WCAG -->
+    <main id="main-content">
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <p class="section-subtitle">Conóceme</p>
-                <h2 class="section-title">Sobre Mí</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right">
-                    <video src="img/projects/jorgez-tech.mp4" autoplay loop muted playsinline></video>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="20">20+</h3>
-                            <p class="stat-label">Proyectos</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="3">3</h3>
-                            <p class="stat-label">Años Exp.</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3 class="stat-number" data-target="6">6+</h3>
-                            <p class="stat-label">Clientes</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-text" data-aos="fade-left">
-                    <h3>Desarrollador Backend con foco en C#/.NET y Python/Django</h3>
-                    <p>
-                        Soy un desarrollador orientado a backend con experiencia consolidada en la construcción de soluciones.
-                        Mi trabajo se centra en desarrollar con C#/.NET y Python/Django, priorizando claridad técnica
-                        y una base sólida para evolucionar cada sistema.
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-particles" id="particles"></div>
+            <div class="container">
+                <div class="hero-content" data-aos="fade-up">
+                    <p class="hero-greeting">Desarrollador Backend | Full Stack </p>
+                    <h1 class="hero-title">Jorge Zuta</h1>
+                    <h2 class="hero-subtitle">
+                        <span class="typing-text">Desarrollador Backend</span>
+                    </h2>
+                    <p class="hero-description">
+                        Desarrollador Backend &amp; Full Stack enfocado en C#/.NET, Python y diseño de arquitecturas
+                        REST robustas. Integro asistentes de Inteligencia Artificial para acelerar testing y calidad,
+                        construyendo software mantenible y seguro.
                     </p>
-                    <p>
-                        Valoro el diseño de sistemas claros, la documentación como parte del código
-                        y el aprendizaje continuo como práctica diaria para entregar software mantenible.
-                    </p>
-                    <div class="about-info">
-                        <div class="info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Santiago, Chile</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>jzuta309@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>Desarrollador Backend - C#/.NET - Python/Django</span>
-                        </div>
-                        <div class="info-item">
-                            <i class="fas fa-briefcase"></i>
-                            <span>Disponible para proyectos</span>
-                        </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Contactar
+                        </a>
+                        <a href="#projects" class="btn btn-secondary">
+                            <i class="fas fa-briefcase"></i> Ver Proyectos
+                        </a>
+                        <a href="docs/CV%20-%20Jorge%20Zuta%20_%20Backend%20%26%20Full%20Stack%20Developer.pdf" download="CV - Jorge Zuta _ Backend &amp; Full Stack Developer.pdf" class="btn btn-outline">
+                            <i class="fas fa-download"></i> Descargar CV
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills section section-dark">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <p class="section-subtitle">Mi Arsenal</p>
-                <h2 class="section-title">Habilidades & Tecnologías</h2>
-            </div>
-            <div class="skills-grid">
-                <!-- Frontend -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="0">
-                    <div class="category-icon">
-                        <i class="fas fa-palette"></i>
-                    </div>
-                    <h3>Frontend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-html5"></i>
-                            <span>HTML5</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-css3-alt"></i>
-                            <span>CSS3</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-js"></i>
-                            <span>JavaScript</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-react"></i>
-                            <span>React</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-vuejs"></i>
-                            <span>Vue.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-bootstrap"></i>
-                            <span>Bootstrap</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Backend -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                    <div class="category-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Backend</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-node"></i>
-                            <span>Node.js</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-java"></i>
-                            <span>Java</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MongoDB</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-database"></i>
-                            <span>MySQL</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-fire"></i>
-                            <span>Firebase</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-                    <div class="category-icon">
-                        <i class="fas fa-tools"></i>
-                    </div>
-                    <h3>Herramientas</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fab fa-git-alt"></i>
-                            <span>Git</span>
-                        </div>
-                        <div class="skill-item">
+                    <div class="hero-social">
+                        <a href="https://github.com/jorgez-tech" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub">
                             <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-docker"></i>
-                            <span>Docker</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fab fa-figma"></i>
-                            <span>Figma</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-code"></i>
-                            <span>VS Code</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-terminal"></i>
-                            <span>Terminal</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Soft Skills -->
-                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-                    <div class="category-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Soft Skills</h3>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <i class="fas fa-lightbulb"></i>
-                            <span>Creatividad</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-comments"></i>
-                            <span>Comunicación</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-users-cog"></i>
-                            <span>Trabajo en Equipo</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-clock"></i>
-                            <span>Gestión del Tiempo</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-puzzle-piece"></i>
-                            <span>Resolución de Problemas</span>
-                        </div>
-                        <div class="skill-item">
-                            <i class="fas fa-book-reader"></i>
-                            <span>Autoaprendizaje</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <p class="section-subtitle">Mi Trabajo</p>
-                <h2 class="section-title">Proyectos Destacados</h2>
-            </div>
-            
-            <!-- Project Filter -->
-            <div class="project-filter" data-aos="fade-up">
-                <button class="filter-btn active" data-filter="all">Todos</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-                <button class="filter-btn" data-filter="design">Diseño</button>
-            </div>
-
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card" data-category="web" data-aos="fade-up">
-                    <div class="project-image">
-                        <img src="img/projects/encuestas_django.png" alt="Proyecto 1" loading="lazy" width="1918" height="894">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/encuestas_django.png" class="project-link" data-large="img/projects/encuestas_django.png" onclick="openPreview(event)" aria-label="Ampliar imagen">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/Jorgez-tech/encuestas" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Encuestas Django</h3>
-                        <p>Plataforma de encuestas con autenticación, creación de encuestas, votación y resultados en tiempo real.</p>
-                        <div class="project-tags">
-                            <span class="tag">Django</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">PostgreSQL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
-                        <img src="img/projects/Baloncestoteam.png" alt="Proyecto 2" loading="lazy" width="1888" height="892">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/Baloncestoteam.png" class="project-link" data-large="img/projects/Baloncestoteam.png" onclick="openPreview(event)" aria-label="Ampliar imagen">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/jorgez-tech/Baloncestoteam" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Baloncestoteam</h3>
-                        <p>Aplicación para la gestión integral de un equipo de baloncesto: administración de jugadores y estadísticas de partidos.</p>
-                        <div class="project-tags">
-                            <span class="tag">React</span>
-                            <span class="tag">Node.js + Express</span>
-                            <span class="tag">MongoDB</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="img/projects/crossfit-app.png" alt="Proyecto 3" loading="lazy" width="1857" height="871">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/crossfit-app.png" class="project-link" data-large="img/projects/crossfitapp.png" onclick="openPreview(event)" aria-label="Ampliar imagen">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/Jorgez-tech/crossfit-app" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>CroosFit App</h3>
-                        <p>Plataforma full-stack para la gestión de entrenamientos, miembros y records en un box de CrossFit.</p>
-                        <div class="project-tags">
-                            <span class="tag">Express.js</span>
-                            <span class="tag">Vue.js</span>
-                            <span class="tag">SQLite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
-                        <img src="img/projects/portfolio.png" alt="Proyecto 4" loading="lazy" width="1884" height="881">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/portfolio.png" class="project-link" data-large="img/projects/portfolio.png" onclick="openPreview(event)" aria-label="Ampliar imagen">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/jorgez-tech/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Portfolio Website</h3>
-                        <p>Sitio web portfolio moderno y responsivo con animaciones suaves y diseño minimalista.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML5</span>
-                            <span class="tag">CSS3</span>
-                            <span class="tag">JavaScript</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
-                        <img src="img/projects/tienda_online.png" alt="Proyecto 5" loading="lazy" width="1882" height="945">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/tienda_online.png" class="project-link" data-large="img/projects/tienda_online.png" onclick="openPreview(event)" aria-label="Ampliar imagen">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/jorgez-tech/" class="project-link" target="_blank" rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Tienda Online</h3>
-                        <p>Plataforma de comercio electrónico con carrito de compras, sistema de pago y gestión de inventario.</p>
-                        <div class="project-tags">
-                            <span class="tag">Api Python</span>
-                            <span class="tag">Angular</span>
-                            <span class="tag">SQLite</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
-                        <img src="img/projects/tatoo_ink.png" alt="Proyecto 6" loading="lazy" width="1883" height="859">
-                        <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="img/projects/tatoo_ink.png" class="project-link" target="_blank" rel="noopener noreferrer">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                                <a href="https://github.com/Jorgez-tech/Tatoo_ink" class="project-link" target="_blank" rel="noopener noreferrer">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project-content">
-                        <h3>Studio Tatoo Ink</h3>
-                        <p>Sitio web para estudio de tatuajes con información de servicios, galería y contacto.</p>
-                        <div class="project-tags">
-                            <span class="tag">TypeScript</span>
-                            <span class="tag">React</span>
-                            <span class="tag">Tailwind CSS</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="experience section section-dark">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <p class="section-subtitle">Mi Trayectoria</p>
-                <h2 class="section-title">Experiencia & Educación</h2>
-            </div>
-            
-            <div class="timeline">
-                <!-- Project Experience 1 -->
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025</span>
-                        <h3>Desarrollador Frontend</h3>
-                        <h4>Proyecto: Angular Shop Template</h4>
-                        <p>Desarrollo de plantilla e-commerce con Angular y TypeScript para tiendas online.</p>
-                        <ul>
-                            <li>Arquitectura de componentes reutilizables</li>
-                            <li>Gestión de estado y routing</li>
-                            <li>Integración de carrito de compras</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project Experience 2 -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2025</span>
-                        <h3>Desarrollador Backend</h3>
-                        <h4>Proyectos: CRM Básico & Biblioteca Personal</h4>
-                        <p>Desarrollo de sistemas de gestión con enfoque backend, usando Python/Django y bases de datos relacionales.</p>
-                        <ul>
-                            <li>CRM para comercios con JavaScript</li>
-                            <li>Sistema de biblioteca con Django y PostgreSQL</li>
-                            <li>CRUD completo y autenticación de usuarios</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Project Experience 3 -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
-                    <div class="timeline-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2025</span>
-                        <h3>Desarrollador Frontend</h3>
-                        <h4>Proyectos: Vue.js & Landing Pages</h4>
-                        <p>Desarrollo de aplicaciones web y páginas de presentación con Vue.js y HTML/CSS.</p>
-                        <ul>
-                            <li>App CrossFit con Vue.js</li>
-                            <li>Landing pages para equipos deportivos</li>
-                            <li>Diseño responsivo y optimización SEO</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Education Item 2 -->
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-icon">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-content">
-                        <span class="timeline-date">2024 - 2026</span>
-                        <h3>Programador</h3>
-                        <h4>Universidad Mayor, Chile</h4>
-                        <p>Técnico en formación enfocado en soluciones web, documentación eficiente y colaboración en proyectos educativos.</p>
-                        <ul>
-                            <li>Desarrollo web full stack</li>
-                            <li>Proyectos con Django, React y JavaScript</li>
-                            <li>Énfasis en buenas prácticas de programación</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <p class="section-subtitle">Hablemos</p>
-                <h2 class="section-title">Contáctame</h2>
-                <p class="section-description">
-                    ¿Tienes un proyecto en mente? ¿Quieres colaborar? ¡Estoy disponible!
-                </p>
-            </div>
-            
-            <div class="contact-wrapper">
-                <!-- Contact Info -->
-                <div class="contact-info" data-aos="fade-right">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Ubicación</h3>
-                            <p>Santiago, Chile</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                        </a>
+                        <a href="https://www.linkedin.com/in/jorge-zuta-23b380152/" target="_blank"
+                            rel="noopener noreferrer" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://wa.me/56992251118?text=Hola%20Jorge,%20vi%20tu%20perfil%20profesional%20y%20me%20gustar%C3%ADa%20conversar."
+                            target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:jzuta309@gmail.com" aria-label="Email">
                             <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>jzuta309@gmail.com</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image" data-aos="fade-left" data-aos-delay="200">
+                    <div class="image-wrapper">
+                        <img src="img/foto_ejecutivo.jpg" alt="Jorge Zuta - Desarrollador Backend" width="585"
+                            height="1024" fetchpriority="high">
+                        <div class="image-decoration"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <a href="#about" aria-label="Ir a la sección Sobre Mí">
+                    <div class="mouse">
+                        <div class="wheel"></div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <p class="section-subtitle">Conóceme</p>
+                    <h2 class="section-title">Sobre Mí</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-image" data-aos="fade-right">
+                        <video src="img/projects/jorgez-tech.mp4" autoplay loop muted playsinline
+                            title="Demostración visual de proyectos interactivos"></video>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="20">20+</h3>
+                                <p class="stat-label">Proyectos</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="3">3</h3>
+                                <p class="stat-label">Años Exp.</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3 class="stat-number" data-target="6">6+</h3>
+                                <p class="stat-label">Clientes</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Teléfono</h3>
-                            <p>+569 9225 1118</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-social">
-                        <h3>Sígueme en</h3>
-                        <div class="social-links">
-                            <a href="https://github.com/jorgez-tech" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/jorge-zuta-23b380152/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                            <!-- <a href="https://x.com/309_j3429" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a> -->
-                            <a href="https://www.instagram.com/jorgezuta/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <div class="about-text" data-aos="fade-left">
+                        <h3>Desarrollador Backend enfocado en APIs robustas, seguridad y calidad</h3>
+                        <p>
+                            Desarrollo soluciones backend y full stack con C#/.NET, Python (Django/FastAPI) y Node.js.
+                            Mi enfoque prioriza el diseño de arquitecturas desacopladas, la seguridad defensiva y la
+                            documentación técnica como parte integral del código.
+                        </p>
+                        <p>
+                            Integro herramientas y agentes de IA (AI-Assisted Development) para acelerar flujos de
+                            trabajo, automatización de pruebas y refactorización continua. Mi trayectoria previa en
+                            entornos industriales de alta criticidad aporta resiliencia operativa y rigor metódico a
+                            cada entrega.
+                        </p>
+                        <div class="about-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Santiago, Chile</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>jzuta309@gmail.com</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Desarrollador Backend - C#/.NET - Python/Django</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <span>Disponible para proyectos</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <!-- Contact Form -->
-                <form class="contact-form" id="contactForm" action="https://formspree.io/f/meodoopo" method="POST" data-aos="fade-left">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="" required>
-                        <label for="name">Nombre</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="" required>
-                        <label for="email">Email</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <input type="text" id="subject" name="_subject" placeholder="" required>
-                        <label for="subject">Asunto</label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="" required></textarea>
-                        <label for="message">Mensaje</label>
-                    </div>
-                    
-                    <!-- Campo oculto para configurar la página de agradecimiento -->
-                    <input type="hidden" name="_next" value="https://jorgez-tech.github.io/pagina_personal/#contact">
-                    <!-- Campo oculto para evitar captcha si quieres -->
-                    <input type="hidden" name="_captcha" value="false">
-                    
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Enviar Mensaje
-                    </button>
-                    
-                    <div class="form-message" id="formMessage"></div>
-                </form>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section section-dark">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <p class="section-subtitle">Mi Arsenal</p>
+                    <h2 class="section-title">Habilidades & Tecnologías</h2>
+                </div>
+                <div class="skills-grid">
+                    <!-- Frontend -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="0">
+                        <div class="category-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Frontend</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-html5"></i>
+                                <span>HTML5</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-css3-alt"></i>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-js"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-react"></i>
+                                <span>React</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-vuejs"></i>
+                                <span>Vue.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-bootstrap"></i>
+                                <span>Bootstrap</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                        <div class="category-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Backend</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>C# / .NET</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-python"></i>
+                                <span>Python / Django</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-node"></i>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>PostgreSQL</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-database"></i>
+                                <span>MongoDB</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>APIs REST</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herramientas & IA -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                        <div class="category-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Herramientas &amp; IA</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fab fa-git-alt"></i>
+                                <span>Git &amp; GitHub</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-robot"></i>
+                                <span>AI Coding &amp; LLMs</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fab fa-docker"></i>
+                                <span>Docker</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-vial"></i>
+                                <span>Cypress / xUnit</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>VS Code</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-terminal"></i>
+                                <span>Terminal / CI</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soft Skills -->
+                    <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                        <div class="category-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Soft Skills</h3>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <i class="fas fa-lightbulb"></i>
+                                <span>Creatividad</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-comments"></i>
+                                <span>Comunicación</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-users-cog"></i>
+                                <span>Trabajo en Equipo</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Gestión del Tiempo</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-puzzle-piece"></i>
+                                <span>Resolución de Problemas</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-book-reader"></i>
+                                <span>Autoaprendizaje</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <p class="section-subtitle">Mi Trabajo</p>
+                    <h2 class="section-title">Proyectos Destacados</h2>
+                </div>
+
+                <!-- Project Filter -->
+                <div class="project-filter" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="web">Web Apps</button>
+                    <button class="filter-btn" data-filter="mobile">Mobile</button>
+                    <button class="filter-btn" data-filter="design">Diseño</button>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card" data-category="web" data-aos="fade-up">
+                        <div class="project-image">
+                            <img src="img/projects/encuestas_django.png" alt="Proyecto 1" loading="lazy" width="1918"
+                                height="894">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/encuestas_django.png" class="project-link"
+                                        data-large="img/projects/encuestas_django.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Jorgez-tech/encuestas" class="project-link"
+                                        target="_blank" rel="noopener noreferrer"
+                                        aria-label="Abrir repositorio en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Encuestas Django</h3>
+                            <p>Plataforma de encuestas con autenticación, creación de encuestas, votación y resultados
+                                en tiempo real.</p>
+                            <div class="project-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="100">
+                        <div class="project-image">
+                            <img src="img/projects/Baloncestoteam.png" alt="Proyecto 2" loading="lazy" width="1888"
+                                height="892">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/Baloncestoteam.png" class="project-link"
+                                        data-large="img/projects/Baloncestoteam.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/jorgez-tech/Baloncestoteam" class="project-link"
+                                        target="_blank" rel="noopener noreferrer"
+                                        aria-label="Abrir repositorio en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Baloncestoteam</h3>
+                            <p>Aplicación para la gestión integral de un equipo de baloncesto: administración de
+                                jugadores y estadísticas de partidos.</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Node.js + Express</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="200">
+                        <div class="project-image">
+                            <img src="img/projects/crossfit-app.png" alt="Proyecto 3" loading="lazy" width="1857"
+                                height="871">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/crossfit-app.png" class="project-link"
+                                        data-large="img/projects/crossfit-app.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen CrossFit App">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Jorgez-tech/crossfit-app" class="project-link"
+                                        target="_blank" rel="noopener noreferrer"
+                                        aria-label="Abrir repositorio en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>CrossFit App</h3>
+                            <p>Plataforma full-stack para la gestión de entrenamientos, miembros y records en un box de
+                                CrossFit.</p>
+                            <div class="project-tags">
+                                <span class="tag">Express.js</span>
+                                <span class="tag">Vue.js</span>
+                                <span class="tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4 -->
+                    <div class="project-card" data-category="design" data-aos="fade-up" data-aos-delay="300">
+                        <div class="project-image">
+                            <img src="img/projects/portfolio.png" alt="Proyecto 4" loading="lazy" width="1884"
+                                height="881">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/portfolio.png" class="project-link"
+                                        data-large="img/projects/portfolio.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/jorgez-tech/" class="project-link" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfolio Website</h3>
+                            <p>Sitio web portfolio moderno y responsivo con animaciones suaves y diseño minimalista.</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card" data-category="web" data-aos="fade-up" data-aos-delay="400">
+                        <div class="project-image">
+                            <img src="img/projects/tienda_online.png" alt="Proyecto 5" loading="lazy" width="1882"
+                                height="945">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/tienda_online.png" class="project-link"
+                                        data-large="img/projects/tienda_online.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/jorgez-tech/" class="project-link" target="_blank"
+                                        rel="noopener noreferrer" aria-label="Abrir repositorio en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Tienda Online</h3>
+                            <p>Plataforma de comercio electrónico con carrito de compras, sistema de pago y gestión de
+                                inventario.</p>
+                            <div class="project-tags">
+                                <span class="tag">Api Python</span>
+                                <span class="tag">Angular</span>
+                                <span class="tag">SQLite</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card" data-category="mobile" data-aos="fade-up" data-aos-delay="500">
+                        <div class="project-image">
+                            <img src="img/projects/tatoo_ink.png" alt="Proyecto 6" loading="lazy" width="1883"
+                                height="859">
+                            <div class="project-overlay">
+                                <div class="project-links">
+                                    <a href="img/projects/tatoo_ink.png" class="project-link"
+                                        data-large="img/projects/tatoo_ink.png" onclick="openPreview(event)"
+                                        aria-label="Ampliar imagen Studio Tatoo Ink">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                    <a href="https://github.com/Jorgez-tech/Tatoo_ink" class="project-link"
+                                        target="_blank" rel="noopener noreferrer"
+                                        aria-label="Repositorio de Studio Tatoo Ink en GitHub">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Studio Tatoo Ink</h3>
+                            <p>Sitio web para estudio de tatuajes con información de servicios, galería y contacto.</p>
+                            <div class="project-tags">
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">React</span>
+                                <span class="tag">Tailwind CSS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience section section-dark">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <p class="section-subtitle">Mi Trayectoria</p>
+                    <h2 class="section-title">Experiencia & Educación</h2>
+                </div>
+
+                <div class="timeline" id="timeline">
+                    <!-- Haz de Luz Láser Interactivo (Opción A - Tech Azul Cobalto) -->
+                    <div class="timeline-beam" id="timelineBeam" aria-hidden="true">
+                        <span class="beam-glow"></span>
+                    </div>
+
+                    <!-- Experience Item 1 (Intelsoft SpA) -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Jul 2026 – Sep 2026</span>
+                            <h3>Desarrollo de Software Full-Stack</h3>
+                            <h4>Intelsoft SpA — Plataformas E-commerce & Soporte</h4>
+                            <p>Blindaje de seguridad y desarrollo de arquitectura desacoplada para plataformas de
+                                comercio electrónico y soporte.</p>
+                            <ul>
+                                <li><strong>Seguridad & Auth:</strong> Migración a cookies HttpOnly seguras, flujo OTP
+                                    en 3 pasos y rate-limiting.</li>
+                                <li><strong>FSM de Órdenes:</strong> Máquina de estados (10 estados) con reserva atómica
+                                    de stock y comprobantes PDF.</li>
+                                <li><strong>Arquitectura & QA:</strong> Persistencia en TypeORM/MongoDB (ADRs) y suite
+                                    Cypress E2E aprobada al 100%.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 2 (Backend .NET 8) -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="timeline-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 – 2026</span>
+                            <h3>Arquitectura Backend & APIs REST</h3>
+                            <h4>Tatoo_ink & Servicios Escalables (.NET 8 · C#)</h4>
+                            <p>Diseño e implementación de servicios backend modulares bajo principios de arquitectura
+                                limpia y defensas OWASP.</p>
+                            <ul>
+                                <li>Servicios ASP.NET Core con pruebas unitarias y de integración en xUnit.</li>
+                                <li>Rate-limiting, middlewares personalizados y validación estricta de payloads.</li>
+                                <li>Documentación corporativa OpenAPI / Swagger y despliegue modular.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 3 (Full Stack & DevOps) -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="timeline-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024 – 2025</span>
+                            <h3>Desarrollador Full Stack</h3>
+                            <h4>Angular Shop Template & Baloncestoteam</h4>
+                            <p>Creación de aplicaciones web completas listas para producción, con enfoque en componentes
+                                reactivos y contenedorización.</p>
+                            <ul>
+                                <li>Frontend reactivo en Angular 17 / TypeScript integrado a APIs en FastAPI y Node.js.
+                                </li>
+                                <li>Contenedorización con Docker Compose, Nginx SSL y CI/CD con GitHub Actions.</li>
+                                <li>Integración con pasarelas de pago (Mercado Pago / Webpay) y gestión de roles.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience Item 4 (Educación & Continuidad) -->
+                    <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="timeline-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2024 – 2026</span>
+                            <h3>Técnico Universitario en Programación</h3>
+                            <h4>Universidad Mayor — Santiago, Chile</h4>
+                            <p>Formación profesional en ingeniería de software, patrones de diseño, bases de datos y
+                                ciberseguridad aplicada.</p>
+                            <ul>
+                                <li>Práctica profesional de ingeniería concluida con distinción.</li>
+                                <li>Bases sólidas en C#, Python, SQL (PostgreSQL), estructuras de datos y Git.</li>
+                                <li>Continuidad académica proyectada hacia Ingeniería en Ciberseguridad (2027).</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <p class="section-subtitle">Hablemos</p>
+                    <h2 class="section-title">Contáctame</h2>
+                    <p class="section-description">
+                        ¿Tienes un proyecto en mente? ¿Quieres colaborar? ¡Estoy disponible!
+                    </p>
+                </div>
+
+                <div class="contact-wrapper">
+                    <!-- Contact Info -->
+                    <div class="contact-info" data-aos="fade-right">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Ubicación</h3>
+                                <p>Santiago, Chile</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Email</h3>
+                                <p>jzuta309@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Teléfono</h3>
+                                <p>+569 9225 1118</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>WhatsApp</h3>
+                                <p><a href="https://wa.me/56992251118?text=Hola%20Jorge,%20vi%20tu%20perfil%20profesional%20y%20me%20gustar%C3%ADa%20conversar."
+                                        target="_blank" rel="noopener noreferrer"
+                                        style="color: inherit; text-decoration: none;">+56 9 9225 1118 (Chat
+                                        directo)</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-social">
+                            <h3>Sígueme en</h3>
+                            <div class="social-links">
+                                <a href="https://github.com/jorgez-tech" target="_blank" rel="noopener noreferrer"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="https://www.linkedin.com/in/jorge-zuta-23b380152/" target="_blank"
+                                    rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://wa.me/56992251118?text=Hola%20Jorge,%20vi%20tu%20perfil%20profesional%20y%20me%20gustar%C3%ADa%20conversar."
+                                    target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                                        class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/jorgezuta/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form con validaciones accesibles -->
+                    <form class="contact-form" id="contactForm" action="https://formspree.io/f/meodoopo" method="POST"
+                        data-aos="fade-left" novalidate>
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" placeholder="" required minlength="3"
+                                autocomplete="name" aria-required="true" aria-describedby="nameFeedback">
+                            <label for="name">Nombre completo</label>
+                            <span class="form-feedback" id="nameFeedback" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="" required autocomplete="email"
+                                aria-required="true" aria-describedby="emailFeedback">
+                            <label for="email">Correo electrónico</label>
+                            <span class="form-feedback" id="emailFeedback" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" id="subject" name="_subject" placeholder="" required minlength="4"
+                                aria-required="true" aria-describedby="subjectFeedback">
+                            <label for="subject">Asunto</label>
+                            <span class="form-feedback" id="subjectFeedback" aria-live="polite"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" placeholder="" required minlength="10"
+                                aria-required="true" aria-describedby="messageFeedback"></textarea>
+                            <label for="message">Mensaje</label>
+                            <span class="form-feedback" id="messageFeedback" aria-live="polite"></span>
+                        </div>
+
+                        <!-- Campo oculto para configurar la página de agradecimiento -->
+                        <input type="hidden" name="_next"
+                            value="https://jorgez-tech.github.io/pagina_personal/#contact">
+                        <!-- Campo oculto para evitar captcha si quieres -->
+                        <input type="hidden" name="_captcha" value="false">
+
+                        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+
+                        <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>&lt; Jorge Zuta /&gt;</h3>
+                    <div class="footer-brand-header">
+                        <img src="img/logo2.png" alt="Jorge Zuta" class="footer-logo" width="40" height="40">
+                        <h3>&lt; Jorge Zuta /&gt;</h3>
+                    </div>
                     <p>Construyendo el futuro, una línea de código a la vez.</p>
                 </div>
                 <div class="footer-links">
@@ -698,13 +799,13 @@
                 </div>
                 <div class="footer-contact">
                     <h4>Contacto</h4>
-                    <p><i class="fas fa-envelope"></i> jzuta</p>
+                    <p><i class="fas fa-envelope"></i> jzuta309@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +569 9225 1118</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Jorge Zuta. Todos los derechos reservados.</p>
-                <p>Hecho con <i class="fas fa-heart"></i> y <i class="fas fa-coffee"></i></p>
+                <p>&copy; <span id="currentYear">2026</span> Jorge Zuta. Todos los derechos reservados.</p>
+                <p>Desarrollado por jorgez-tech</p>
             </div>
         </div>
     </footer>
@@ -714,10 +815,19 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- AOS Animation Library -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JavaScript -->
+    <!-- Modal Nativo de Previsualización de Proyectos (H-04) -->
+    <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-label="Previsualización de proyecto">
+        <div class="modal-backdrop" onclick="closePreview()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closePreview()" aria-label="Cerrar previsualización">&times;</button>
+            <img id="modalImage" src="" alt="Previsualización del proyecto">
+            <p id="modalCaption" class="modal-caption"></p>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript (100% Nativo) -->
+    <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>

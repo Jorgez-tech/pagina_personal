@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function initializeApp() {
     initNavbar();
     initThemeToggle();
+    initStarsLayer();
     initMobileMenu();
     initScrollToTop();
     initTypingEffect();
@@ -15,7 +16,9 @@ function initializeApp() {
     initProjectFilter();
     initContactForm();
     initScrollAnimations();
-    initParticles();
+    initCVDownloadTracking();
+    initCurrentYear();
+    initAboutVideo();
 }
 
 // ============================================
@@ -105,37 +108,59 @@ function initMobileMenu() {
 }
 
 // ============================================
-// Toggle Tema Claro/Oscuro
+// Toggle Tema Claro/Oscuro (H-01, H-04)
 // ============================================
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const html = document.documentElement;
+    if (!themeToggle) return;
 
-    // Cargar tema guardado
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    html.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
+    let savedTheme = 'light';
+    try {
+        savedTheme = localStorage.getItem('theme') || 'light';
+    } catch (e) {
+        console.warn('localStorage no disponible para tema, usando default light.');
+    }
 
-    themeToggle.addEventListener('click', () => {
-        const currentTheme = html.getAttribute('data-theme');
+    applyTheme(savedTheme);
+
+    themeToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        const currentTheme = html.getAttribute('data-theme') || 'light';
         const newTheme = currentTheme === 'light' ? 'dark' : 'light';
 
-        html.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
+        applyTheme(newTheme);
+        try {
+            localStorage.setItem('theme', newTheme);
+        } catch (err) {
+            // Ignorar fallo de storage en modo privado/sandboxed
+        }
     });
+}
+
+function applyTheme(theme) {
+    const html = document.documentElement;
+    html.setAttribute('data-theme', theme);
+    if (theme === 'dark') {
+        html.classList.add('dark-theme');
+        html.classList.remove('light-theme');
+    } else {
+        html.classList.add('light-theme');
+        html.classList.remove('dark-theme');
+    }
+    updateThemeIcon(theme);
 }
 
 function updateThemeIcon(theme) {
     const themeToggle = document.getElementById('themeToggle');
+    if (!themeToggle) return;
     const icon = themeToggle.querySelector('i');
+    if (!icon) return;
 
     if (theme === 'dark') {
-        icon.classList.remove('fa-moon');
-        icon.classList.add('fa-sun');
+        icon.className = 'fas fa-sun';
     } else {
-        icon.classList.remove('fa-sun');
-        icon.classList.add('fa-moon');
+        icon.className = 'fas fa-moon';
     }
 }
 
@@ -296,14 +321,128 @@ function initProjectFilter() {
 // ============================================
 // Formulario de Contacto
 // ============================================
+// ============================================
+// Formulario de Contacto con Validación en Tiempo Real
+// ============================================
 function initContactForm() {
     const form = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
 
     if (!form) return;
 
+    const fields = [
+        {
+            input: form.querySelector('#name'),
+            feedback: form.querySelector('#nameFeedback'),
+            validate: (val) => {
+                if (!val.trim()) return 'Por favor ingresa tu nombre completo.';
+                if (val.trim().length < 3) return 'El nombre debe tener al menos 3 caracteres.';
+                return '';
+            }
+        },
+        {
+            input: form.querySelector('#email'),
+            feedback: form.querySelector('#emailFeedback'),
+            validate: (val) => {
+                if (!val.trim()) return 'Por favor ingresa tu correo electrónico.';
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+                if (!emailRegex.test(val.trim())) return 'Ingresa un correo válido (ejemplo: contacto@dominio.com).';
+                return '';
+            }
+        },
+        {
+            input: form.querySelector('#subject'),
+            feedback: form.querySelector('#subjectFeedback'),
+            validate: (val) => {
+                if (!val.trim()) return 'Por favor ingresa el asunto de tu mensaje.';
+                if (val.trim().length < 4) return 'El asunto debe tener al menos 4 caracteres.';
+                return '';
+            }
+        },
+        {
+            input: form.querySelector('#message'),
+            feedback: form.querySelector('#messageFeedback'),
+            validate: (val) => {
+                if (!val.trim()) return 'Por favor ingresa tu mensaje.';
+                if (val.trim().length < 10) return 'El mensaje debe tener al menos 10 caracteres para entender tu consulta.';
+                return '';
+            }
+        }
+    ];
+
+    function validateField(fieldConfig, showFeedback = true) {
+        const { input, feedback, validate } = fieldConfig;
+        if (!input) return true;
+
+        const errorMsg = validate(input.value);
+        const formGroup = input.closest('.form-group');
+
+        if (errorMsg) {
+            if (showFeedback) {
+                input.classList.add('is-invalid');
+                input.classList.remove('is-valid');
+                if (formGroup) formGroup.classList.add('has-error');
+                if (feedback) {
+                    feedback.innerHTML = `<i class="fas fa-exclamation-circle" aria-hidden="true"></i> ${errorMsg}`;
+                }
+            }
+            return false;
+        } else {
+            input.classList.remove('is-invalid');
+            if (input.value.trim().length > 0) {
+                input.classList.add('is-valid');
+            } else {
+                input.classList.remove('is-valid');
+            }
+            if (formGroup) formGroup.classList.remove('has-error');
+            if (feedback) feedback.textContent = '';
+            return true;
+        }
+    }
+
+    // Escuchar eventos en vivo: al desenfocar o al escribir
+    fields.forEach((fieldConfig) => {
+        const { input } = fieldConfig;
+        if (!input) return;
+
+        input.addEventListener('blur', () => {
+            validateField(fieldConfig, true);
+        });
+
+        input.addEventListener('input', () => {
+            // Si el campo ya tiene error visual, validar en tiempo real para quitarlo al corregir
+            if (input.classList.contains('is-invalid')) {
+                validateField(fieldConfig, true);
+            } else if (input.value.trim().length > 0) {
+                validateField(fieldConfig, false);
+            }
+        });
+    });
+
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
+
+        // Validar todos los campos antes de enviar
+        let isFormValid = true;
+        let firstInvalidField = null;
+
+        fields.forEach((fieldConfig) => {
+            const isValid = validateField(fieldConfig, true);
+            if (!isValid) {
+                isFormValid = false;
+                if (!firstInvalidField) {
+                    firstInvalidField = fieldConfig.input;
+                }
+            }
+        });
+
+        if (!isFormValid) {
+            if (firstInvalidField) {
+                firstInvalidField.focus();
+            }
+            showFormMessage('Por favor completa los campos requeridos correctamente.', 'error');
+            return;
+        }
 
         const submitButton = form.querySelector('button[type="submit"]');
         const buttonText = submitButton.innerHTML;
@@ -314,7 +453,7 @@ function initContactForm() {
         formMessage.textContent = '';
 
         try {
-            // Enviar formulario por AJAX
+            // Enviar formulario por AJAX a Formspree
             const formData = new FormData(form);
             const response = await fetch(form.action, {
                 method: 'POST',
@@ -325,92 +464,124 @@ function initContactForm() {
             });
 
             if (response.ok) {
-                // Éxito
-                showFormMessage('¡Mensaje enviado con éxito! Te responderé pronto.', 'success');
+                showFormMessage('¡Mensaje enviado con éxito! Te responderé a la brevedad.', 'success');
                 form.reset();
+                // Limpiar marcas de validación
+                fields.forEach(({ input, feedback }) => {
+                    if (input) {
+                        input.classList.remove('is-valid', 'is-invalid');
+                        const group = input.closest('.form-group');
+                        if (group) group.classList.remove('has-error');
+                    }
+                    if (feedback) feedback.textContent = '';
+                });
             } else {
-                throw new Error('Error en el envío');
+                throw new Error('Error en la respuesta del servidor');
             }
         } catch (error) {
-            // Error
-            showFormMessage('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.', 'error');
+            showFormMessage('Hubo un inconveniente al enviar el mensaje. También puedes escribirme directamente a WhatsApp o correo.', 'error');
         } finally {
-            // Restaurar botón
             submitButton.disabled = false;
             submitButton.innerHTML = buttonText;
         }
     });
-} function showFormMessage(message, type) {
+}
+
+function showFormMessage(message, type) {
     const formMessage = document.getElementById('formMessage');
+    if (!formMessage) return;
     formMessage.textContent = message;
     formMessage.className = `form-message ${type}`;
 
     setTimeout(() => {
         formMessage.className = 'form-message';
-    }, 5000);
+    }, 6000);
 }
 
 // ============================================
-// Animaciones al Hacer Scroll (AOS)
+// Animaciones al Hacer Scroll (100% Nativo Vanilla JS)
 // ============================================
 function initScrollAnimations() {
-    // Inicializar AOS (Animate On Scroll)
-    if (typeof AOS !== 'undefined') {
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            once: true,
-            offset: 100
+    // IMPORTANTE: .timeline-item se excluye aquí — sus animaciones de entrada
+    // (translateX) son controladas exclusivamente por initTimelineInteractiveBeam().
+    // Incluirlos aquí o en el fallback de 500ms cancelaría el efecto de deslizamiento.
+    const animatedElements = document.querySelectorAll(
+        '[data-aos]:not(.timeline-item), .section-header, .about-content, .skills-grid, .project-card, .contact-info, .contact-form'
+    );
+    if (!animatedElements.length) return;
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible', 'aos-animate');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.05,
+            rootMargin: '0px 0px -20px 0px'
         });
+
+        animatedElements.forEach(el => observer.observe(el));
+    } else {
+        // Fallback inmediato para navegadores sin IntersectionObserver
+        animatedElements.forEach(el => el.classList.add('is-visible', 'aos-animate'));
     }
+
+    // Fallback de seguridad: elementos NO timeline se hacen visibles tras 800ms
+    setTimeout(() => {
+        animatedElements.forEach(el => el.classList.add('is-visible', 'aos-animate'));
+    }, 800);
 }
 
 // ============================================
-// Partículas de Fondo (Opcional)
+// Telemetría Ligera / Webhook Descarga CV (Opcional)
 // ============================================
-function initParticles() {
-    const particlesContainer = document.getElementById('particles');
-    if (!particlesContainer) return;
+function initCVDownloadTracking() {
+    const cvButtons = document.querySelectorAll('a[href*="CV"], a[download]');
+    // Coloca tu URL de Webhook de Discord aquí cuando desees recibir notificaciones:
+    const DISCORD_WEBHOOK_URL = ''; 
 
-    // Crear partículas
-    for (let i = 0; i < 100; i++) { //valor original 50
-        createParticle(particlesContainer);
-    }
+    cvButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            if (!DISCORD_WEBHOOK_URL) return; // Si no hay webhook configurado, no hace nada
+
+            const payload = {
+                username: "jorgez.tech Bot",
+                avatar_url: "https://jorgez.tech/img/logo2.png",
+                embeds: [{
+                    title: "📄 ¡Descarga de CV Registrada!",
+                    description: "Un visitante ha hecho clic en descargar tu CV desde tu portafolio.",
+                    color: 18347, // Color Azul Cobalto (#0047AB) en formato decimal
+                    fields: [
+                        { name: "Fecha y Hora", value: new Date().toLocaleString('es-CL'), inline: true },
+                        { name: "Dispositivo", value: /Mobi|Android/i.test(navigator.userAgent) ? 'Móvil' : 'Desktop', inline: true },
+                        { name: "Origen", value: window.location.href, inline: false }
+                    ],
+                    footer: { text: "jorgez.tech · Portafolio Profesional" }
+                }]
+            };
+
+            fetch(DISCORD_WEBHOOK_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            }).catch(err => console.warn('Error enviando telemetría de CV:', err));
+        });
+    });
 }
 
-function createParticle(container) {
-    const particle = document.createElement('div');
-    particle.style.position = 'absolute';
-    particle.style.width = Math.random() * 5 + 'px';
-    particle.style.height = particle.style.width;
-    particle.style.background = `rgba(99, 102, 241, ${Math.random() * 0.5})`;
-    particle.style.borderRadius = '50%';
-    particle.style.left = Math.random() * 100 + '%';
-    particle.style.top = Math.random() * 100 + '%';
-    particle.style.animation = `float ${Math.random() * 10 + 5}s infinite ease-in-out`;
-
-    container.appendChild(particle);
+// ============================================
+// Actualización Automática del Año (Copyright)
+// ============================================
+function initCurrentYear() {
+    const yearElements = document.querySelectorAll('#currentYear, .current-year');
+    const currentYear = new Date().getFullYear();
+    yearElements.forEach(el => {
+        el.textContent = currentYear;
+    });
 }
-
-// Añadir animación de flotación al CSS dinámicamente
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes float {
-        0%, 100% {
-            transform: translateY(0) translateX(0);
-        }
-        25% {
-            transform: translateY(-20px) translateX(10px);
-        }
-        50% {
-            transform: translateY(-40px) translateX(-10px);
-        }
-        75% {
-            transform: translateY(-20px) translateX(5px);
-        }
-    }
-`;
-document.head.appendChild(style);
 
 // ============================================
 // Smooth Scroll para Navegadores Antiguos
@@ -437,6 +608,44 @@ function smoothScrollPolyfill() {
 }
 
 smoothScrollPolyfill();
+
+// ============================================
+// Restaurar reproducción de video en Sobre Mí
+// ============================================
+function initAboutVideo() {
+    const aboutSection = document.getElementById('about');
+    if (!aboutSection) return;
+    const video = aboutSection.querySelector('video');
+    if (!video) return;
+
+    // Asegurar atributos correctos para autoplay sin restricciones
+    video.muted = true;
+    video.loop = true;
+    video.playsInline = true;
+
+    // Intentar reproducir; si falla (política del navegador), se intentará al ser visible
+    const tryPlay = () => {
+        const promise = video.play();
+        if (promise !== undefined) {
+            promise.catch(() => {
+                // Silencioso: el observer lo intentará cuando la sección sea visible
+            });
+        }
+    };
+
+    const videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                tryPlay();
+            } else {
+                video.pause();
+            }
+        });
+    }, { threshold: 0.1 });
+
+    videoObserver.observe(aboutSection);
+    tryPlay();
+}
 
 // ============================================
 // Prevenir FOUC (Flash of Unstyled Content)
@@ -491,13 +700,91 @@ window.addEventListener('scroll', throttle(() => {
 }, 100));
 
 // ============================================
+// Fondo Nocturno Inteligente / Capa de Estrellas (M-01, M-02)
+// ============================================
+function initStarsLayer() {
+    const container = document.getElementById('starsLayer');
+    if (!container) return;
+
+    // Generar estrellas sutiles distribuidas en la ventana
+    container.innerHTML = '';
+    const starCount = window.innerWidth < 768 ? 32 : 55;
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('span');
+        star.className = 'star';
+        const size = (Math.random() * 1.6 + 1.0).toFixed(1); // 1.0px a 2.6px
+        const top = (Math.random() * 99).toFixed(2);
+        const left = (Math.random() * 99).toFixed(2);
+        const duration = (Math.random() * 3.5 + 2.5).toFixed(1); // 2.5s a 6.0s
+        const delay = (Math.random() * 4).toFixed(1);
+
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.top = `${top}%`;
+        star.style.left = `${left}%`;
+        star.style.setProperty('--twinkle-duration', `${duration}s`);
+        star.style.setProperty('--twinkle-delay', `${delay}s`);
+
+        fragment.appendChild(star);
+    }
+
+    container.appendChild(fragment);
+}
+
+// ============================================
+// Modal de Previsualización de Proyectos (H-04)
+// ============================================
+function openPreview(e) {
+    if (e && e.preventDefault) e.preventDefault();
+    const trigger = e ? (e.currentTarget || e.target.closest('.project-link')) : null;
+    if (!trigger) return;
+
+    const largeSrc = trigger.getAttribute('data-large') || trigger.getAttribute('href');
+    const card = trigger.closest('.project-card');
+    const title = card ? card.querySelector('h3')?.textContent : '';
+
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const modalCaption = document.getElementById('modalCaption');
+
+    if (modal && modalImg) {
+        modalImg.src = largeSrc;
+        if (modalCaption) modalCaption.textContent = title || '';
+        modal.classList.add('active');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closePreview() {
+    const modal = document.getElementById('imageModal');
+    if (modal) {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+}
+
+// Cerrar con Escape
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePreview();
+});
+
+// Exponer en el objeto global para handlers inline en HTML
+window.openPreview = openPreview;
+window.closePreview = closePreview;
+
+// ============================================
 // Console Message (Opcional)
 // ============================================
 console.log(
     '%c¡Hola Developer! ',
-    'color: #4749baff; font-size: 20px; font-weight: bold;'
+    'color: #0047AB; font-size: 20px; font-weight: bold;'
 );
 console.log(
     '%c¿Curioseando el código? ¡Me gusta! \nSi quieres colaborar, ¡contáctame!',
     'color: #64748b; font-size: 14px;'
 );
+

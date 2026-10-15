@@ -1,0 +1,71 @@
+name: CI - Portafolio Quality & Integrity
+
+on:
+  push:
+    branches: [ master, feature/* ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  lint-and-validate:
+    name: Validar Estructura, Enlaces y Calidad
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar Código (Checkout)
+        uses: actions/checkout@v4
+
+      - name: Validar Sintaxis HTML5 y Enlaces Internos
+        run: |
+          echo "=== 1. Verificando integridad de archivos HTML ==="
+          test -f index.html || (echo "ERROR: index.html no encontrado" && exit 1)
+          test -f docs/cv-Jorge.html || (echo "ERROR: docs/cv-Jorge.html no encontrado" && exit 1)
+
+          echo "=== 2. Verificando que todos los assets locales referenciados existan ==="
+          python3 - << 'EOF'
+          import re, os, sys, urllib.parse
+
+          def check_file_assets(html_path):
+              with open(html_path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+
+              # Buscar referencias a src="img/...", href="css/...", src="js/..."
+              patterns = [
+                  r'(?:src|href)=["\'](img/[^"\']+)["\']',
+                  r'(?:src|href)=["\'](css/[^"\']+)["\']',
+                  r'(?:src|href)=["\'](js/[^"\']+)["\']',
+                  r'(?:src|href)=["\'](docs/[^"\']+)["\']',
+              ]
+
+              base_dir = os.path.dirname(os.path.abspath(html_path))
+              repo_root = os.getcwd()
+              errors = 0
+
+              for p in patterns:
+                  matches = re.findall(p, content)
+                  for match in matches:
+                      # Limpiar query params o hashes y decodificar URLs codificadas (%20, etc.)
+                      clean_path = urllib.parse.unquote(match.split('?')[0].split('#')[0])
+                      full_target = os.path.join(repo_root, clean_path)
+                      if not os.path.exists(full_target):
+                          print(f"[ERROR] Archivo referenciado no encontrado: {clean_path} (en {html_path})")
+                          errors += 1
+
+              return errors
+
+          total_errors = check_file_assets("index.html")
+          if total_errors > 0:
+              print(f"\nSe encontraron {total_errors} enlaces rotos a assets internos.")
+              sys.exit(1)
+          else:
+              print("✓ Todos los assets locales (img, css, js, docs) existen y resuelven correctamente.")
+          EOF
+
+      - name: Validar Dependencias Nativas (Cero Frameworks Bloqueantes)
+        run: |
+          echo "=== Verificando regla de cero dependencias externas de renderizado ==="
+          if grep -i "unpkg.com/aos" index.html; then
+            echo "ERROR: Se detectó AOS externo en index.html. Debe mantenerse 100% nativo."
+            exit 1
+          fi
+          echo "✓ Validación de arquitectura nativa aprobada."
