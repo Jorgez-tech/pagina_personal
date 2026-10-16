@@ -37,42 +37,53 @@ function initNavbar() {
         }
     });
 
-    // Navegación suave y activar enlace actual
+    // Navegación suave y activar enlace actual con offset milimétrico
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             const targetId = link.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
+            if (targetId === '#home') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                const targetSection = document.querySelector(targetId);
+                if (targetSection) {
+                    const navHeight = navbar ? navbar.offsetHeight : 80;
+                    const header = targetSection.querySelector('.section-header') || targetSection;
+                    // Coordenada exacta del encabezado de la sección
+                    const headerTop = header.getBoundingClientRect().top + window.scrollY;
+                    // Posicionarlo exactamente a 20px debajo de la barra de navegación
+                    const exactTarget = Math.max(0, headerTop - navHeight - 20);
+                    window.scrollTo({
+                        top: exactTarget,
+                        behavior: 'smooth'
+                    });
+                }
+            }
 
-            if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+            // Actualizar link activo
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
 
-                // Actualizar link activo
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-
-                // Cerrar menú móvil si está abierto
-                const navMenu = document.getElementById('navMenu');
-                const navToggle = document.getElementById('navToggle');
+            // Cerrar menú móvil si está abierto
+            const navMenu = document.getElementById('navMenu');
+            const navToggle = document.getElementById('navToggle');
+            if (navMenu && navToggle) {
                 navMenu.classList.remove('active');
                 navToggle.classList.remove('active');
             }
         });
     });
 
-    // Activar enlace según sección visible
+    // Activar enlace según sección visible (Scroll Spy exacto)
     window.addEventListener('scroll', () => {
         let current = '';
-        const sections = document.querySelectorAll('section');
+        const sections = document.querySelectorAll('section[id]');
+        const navHeight = navbar ? navbar.offsetHeight : 80;
 
         sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (window.scrollY >= sectionTop - 100) {
+            const header = section.querySelector('.section-header') || section;
+            const headerTop = header.getBoundingClientRect().top + window.scrollY;
+            if (window.scrollY >= headerTop - navHeight - 60) {
                 current = section.getAttribute('id');
             }
         });
@@ -83,7 +94,7 @@ function initNavbar() {
                 link.classList.add('active');
             }
         });
-    });
+    }, { passive: true });
 }
 
 // ============================================
@@ -499,14 +510,13 @@ function showFormMessage(message, type) {
 }
 
 // ============================================
-// Animaciones al Hacer Scroll (100% Nativo Vanilla JS)
+// Animaciones al Hacer Scroll (100% Nativo Vanilla JS - Staggered Transitions)
 // ============================================
 function initScrollAnimations() {
     // IMPORTANTE: .timeline-item se excluye aquí — sus animaciones de entrada
-    // (translateX) son controladas exclusivamente por initTimelineInteractiveBeam().
-    // Incluirlos aquí o en el fallback de 500ms cancelaría el efecto de deslizamiento.
+    // son controladas exclusivamente por initTimelineInteractiveBeam() en animations.js.
     const animatedElements = document.querySelectorAll(
-        '[data-aos]:not(.timeline-item), .section-header, .about-content, .skills-grid, .project-card, .contact-info, .contact-form'
+        '[data-aos]:not(.timeline-item)'
     );
     if (!animatedElements.length) return;
 
@@ -519,20 +529,23 @@ function initScrollAnimations() {
                 }
             });
         }, {
-            threshold: 0.05,
-            rootMargin: '0px 0px -20px 0px'
+            threshold: 0.12,
+            rootMargin: '0px 0px -40px 0px'
         });
 
-        animatedElements.forEach(el => observer.observe(el));
+        animatedElements.forEach(el => {
+            // Si el elemento ya está visible en la pantalla inicial (ej. Hero), activarlo de inmediato
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.classList.add('is-visible', 'aos-animate');
+            } else {
+                observer.observe(el);
+            }
+        });
     } else {
-        // Fallback inmediato para navegadores sin IntersectionObserver
+        // Fallback para navegadores sin IntersectionObserver
         animatedElements.forEach(el => el.classList.add('is-visible', 'aos-animate'));
     }
-
-    // Fallback de seguridad: elementos NO timeline se hacen visibles tras 800ms
-    setTimeout(() => {
-        animatedElements.forEach(el => el.classList.add('is-visible', 'aos-animate'));
-    }, 800);
 }
 
 // ============================================

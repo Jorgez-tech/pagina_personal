@@ -140,6 +140,7 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--navbar-height) + 18px);
     background: var(--bg-sky);
     color: var(--text-primary);
     min-height: 100vh;
@@ -220,7 +221,7 @@ img {
 }
 
 .section {
-    padding: var(--spacing-3xl) 0;
+    padding: 4rem 0 5rem 0;
     position: relative;
 }
 
@@ -476,7 +477,7 @@ img {
     font-weight: 600;
     color: var(--text-secondary);
     min-height: 52px;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 14px;
 }
 
 .typing-text {
@@ -495,8 +496,8 @@ img {
     color: var(--text-secondary);
     font-size: 1.05rem;
     line-height: 1.75;
-    margin-top: 0;
-    margin-bottom: var(--spacing-md);
+    margin-top: 6px;
+    margin-bottom: var(--spacing-lg);
     max-width: 540px;
 }
 
@@ -1262,13 +1263,27 @@ img {
 .form-group textarea {
     width: 100%;
     padding: var(--spacing-md);
-    border: 2px solid rgba(0, 71, 171, 0.2);
+    border: 2px solid rgba(56, 189, 248, 0.25);
     border-radius: var(--radius-md);
-    background: var(--bg-primary);
-    color: var(--text-primary);
+    background: #0b1120 !important;
+    color: var(--text-primary) !important;
     font-family: var(--font-primary);
     font-size: 1rem;
     transition: all var(--transition-fast);
+}
+
+/* Prevenir fondo blanco impuesto por el autofill del navegador (Chrome, Edge, Safari) */
+.form-group input:-webkit-autofill,
+.form-group input:-webkit-autofill:hover, 
+.form-group input:-webkit-autofill:focus,
+.form-group textarea:-webkit-autofill,
+.form-group textarea:-webkit-autofill:hover,
+.form-group textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f8fafc !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0b1120 inset !important;
+    box-shadow: 0 0 0px 1000px #0b1120 inset !important;
+    transition: background-color 5000s ease-in-out 0s;
+    caret-color: #f8fafc;
 }
 
 .form-group textarea {
@@ -1285,27 +1300,9 @@ img {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
-}
-
-/* Dark mode: inputs y textarea con mejor contraste y legibilidad */
-[data-theme="dark"] .form-group input,
-[data-theme="dark"] .form-group textarea {
-    background: var(--bg-dark);
-    color: var(--text-primary);
-    border-color: rgba(99, 102, 241, 0.3);
-}
-
-[data-theme="dark"] .form-group input::placeholder,
-[data-theme="dark"] .form-group textarea::placeholder {
-    color: var(--text-secondary);
-    opacity: 0.8;
-}
-
-[data-theme="dark"] .form-group input:focus,
-[data-theme="dark"] .form-group textarea:focus {
-    border-color: var(--primary-light);
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+    border-color: #38bdf8 !important;
+    background: #0d1527 !important;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
 }
 
 .form-group label {
@@ -1317,6 +1314,7 @@ img {
     font-weight: 500;
     transition: all var(--transition-fast);
     pointer-events: none;
+    background: transparent;
 }
 
 .form-group input:focus + label,
@@ -1325,24 +1323,12 @@ img {
 .form-group textarea:not(:placeholder-shown) + label {
     top: -10px;
     left: 10px;
-    font-size: 0.875rem;
-    background: var(--bg-secondary);
+    font-size: 0.85rem;
+    background: #0b1120;
     padding: 0 0.5rem;
-    color: var(--primary-color);
-}
-
-[data-theme="dark"] .form-group input:focus + label,
-[data-theme="dark"] .form-group input:not(:placeholder-shown) + label,
-[data-theme="dark"] .form-group textarea:focus + label,
-[data-theme="dark"] .form-group textarea:not(:placeholder-shown) + label {
-    background: var(--bg-secondary);
-    color: var(--primary-light);
-    top: -10px;
-    left: 10px;
-    font-size: 0.875rem;
-    background: var(--bg-secondary);
-    padding: 0 0.5rem;
-    color: var(--primary-color);
+    color: #38bdf8;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
 }
 
 .form-feedback {
@@ -1350,7 +1336,7 @@ img {
     font-size: 0.82rem;
     margin-top: 6px;
     padding-left: 4px;
-    color: #dc2626;
+    color: #fca5a5;
     font-weight: 500;
     transition: all var(--transition-fast);
 }
@@ -1363,29 +1349,15 @@ img {
 
 .form-group input.is-invalid,
 .form-group textarea.is-invalid {
-    border-color: #ef4444 !important;
-    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+    border-color: #f87171 !important;
+    background: #0b1120 !important;
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.22) !important;
 }
 
 .form-group input.is-valid,
 .form-group textarea.is-valid {
-    border-color: #10b981 !important;
-    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
-}
-
-[data-theme="dark"] .form-feedback {
-    color: #fca5a5;
-}
-
-[data-theme="dark"] .form-group input.is-invalid,
-[data-theme="dark"] .form-group textarea.is-invalid {
-    border-color: #f87171 !important;
-    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.22) !important;
-}
-
-[data-theme="dark"] .form-group input.is-valid,
-[data-theme="dark"] .form-group textarea.is-valid {
     border-color: #34d399 !important;
+    background: #0b1120 !important;
     box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2) !important;
 }
 
@@ -1876,24 +1848,43 @@ img {
 }
 
 /* ============================================
-   Animaciones Nativas de Scroll (100% Vanilla)
+   Animaciones Nativas de Scroll (100% Vanilla - Reemplazo Fiel de AOS)
    ============================================ */
 /* .timeline-item se excluye: sus transiciones son controladas
    exclusivamente por initTimelineInteractiveBeam() en animations.js. */
 [data-aos]:not(.timeline-item) {
     opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
+[data-aos="fade-up"]:not(.timeline-item) {
+    transform: translateY(45px);
+}
+
+[data-aos="fade-down"]:not(.timeline-item) {
+    transform: translateY(-45px);
+}
+
 [data-aos="fade-left"]:not(.timeline-item) {
-    transform: translateX(30px);
+    transform: translateX(45px);
 }
 
 [data-aos="fade-right"]:not(.timeline-item) {
-    transform: translateX(-30px);
+    transform: translateX(-45px);
 }
+
+/* Delays en cascada para habilidades y tarjetas de proyectos */
+[data-aos-delay="50"] { transition-delay: 50ms; }
+[data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos-delay="150"] { transition-delay: 150ms; }
+[data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos-delay="250"] { transition-delay: 250ms; }
+[data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos-delay="350"] { transition-delay: 350ms; }
+[data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos-delay="450"] { transition-delay: 450ms; }
+[data-aos-delay="500"] { transition-delay: 500ms; }
 
 [data-aos]:not(.timeline-item).is-visible,
 [data-aos]:not(.timeline-item).aos-animate {
