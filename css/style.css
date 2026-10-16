@@ -1263,27 +1263,27 @@ img {
 .form-group textarea {
     width: 100%;
     padding: var(--spacing-md);
-    border: 2px solid rgba(56, 189, 248, 0.25);
+    border: 1.5px solid var(--border-color);
     border-radius: var(--radius-md);
-    background: #0b1120 !important;
-    color: var(--text-primary) !important;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
     font-family: var(--font-primary);
     font-size: 1rem;
-    transition: all var(--transition-fast);
+    transition: border-color var(--transition-fast), background-color var(--transition-fast), box-shadow var(--transition-fast);
 }
 
-/* Prevenir fondo blanco impuesto por el autofill del navegador (Chrome, Edge, Safari) */
+/* Autofill adaptativo para navegadores (Chrome, Edge, Safari) */
 .form-group input:-webkit-autofill,
 .form-group input:-webkit-autofill:hover, 
 .form-group input:-webkit-autofill:focus,
 .form-group textarea:-webkit-autofill,
 .form-group textarea:-webkit-autofill:hover,
 .form-group textarea:-webkit-autofill:focus {
-    -webkit-text-fill-color: #f8fafc !important;
-    -webkit-box-shadow: 0 0 0px 1000px #0b1120 inset !important;
-    box-shadow: 0 0 0px 1000px #0b1120 inset !important;
+    -webkit-text-fill-color: var(--text-primary) !important;
+    -webkit-box-shadow: 0 0 0px 1000px var(--bg-secondary) inset !important;
+    box-shadow: 0 0 0px 1000px var(--bg-secondary) inset !important;
     transition: background-color 5000s ease-in-out 0s;
-    caret-color: #f8fafc;
+    caret-color: var(--text-primary);
 }
 
 .form-group textarea {
@@ -1300,9 +1300,9 @@ img {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #38bdf8 !important;
-    background: #0d1527 !important;
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2) !important;
+    border-color: var(--primary-color);
+    background: var(--bg-card);
+    box-shadow: 0 0 0 3px rgba(0, 71, 171, 0.15);
 }
 
 .form-group label {
@@ -1324,11 +1324,11 @@ img {
     top: -10px;
     left: 10px;
     font-size: 0.85rem;
-    background: #0b1120;
+    background: var(--bg-card);
     padding: 0 0.5rem;
-    color: #38bdf8;
+    color: var(--primary-color);
     border-radius: 4px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    border: 1px solid rgba(0, 71, 171, 0.2);
 }
 
 .form-feedback {
@@ -1336,7 +1336,7 @@ img {
     font-size: 0.82rem;
     margin-top: 6px;
     padding-left: 4px;
-    color: #fca5a5;
+    color: #ef4444;
     font-weight: 500;
     transition: all var(--transition-fast);
 }
@@ -1349,15 +1349,91 @@ img {
 
 .form-group input.is-invalid,
 .form-group textarea.is-invalid {
-    border-color: #f87171 !important;
-    background: #0b1120 !important;
-    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.22) !important;
+    border-color: #ef4444 !important;
+    background: #fff5f5 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15) !important;
 }
 
 .form-group input.is-valid,
 .form-group textarea.is-valid {
+    border-color: #10b981 !important;
+    background: #f0fdf4 !important;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15) !important;
+}
+
+/* ============================================
+   Ajustes de Formulario en Dark Theme
+   ============================================ */
+[data-theme="dark"] .form-group input,
+[data-theme="dark"] .form-group textarea,
+.dark-theme .form-group input,
+.dark-theme .form-group textarea {
+    background: #070d1e;
+    color: #f8fafc;
+    border: 1.5px solid rgba(56, 189, 248, 0.25);
+}
+
+[data-theme="dark"] .form-group input:-webkit-autofill,
+[data-theme="dark"] .form-group input:-webkit-autofill:hover, 
+[data-theme="dark"] .form-group input:-webkit-autofill:focus,
+[data-theme="dark"] .form-group textarea:-webkit-autofill,
+[data-theme="dark"] .form-group textarea:-webkit-autofill:hover,
+[data-theme="dark"] .form-group textarea:-webkit-autofill:focus,
+.dark-theme .form-group input:-webkit-autofill,
+.dark-theme .form-group input:-webkit-autofill:hover, 
+.dark-theme .form-group input:-webkit-autofill:focus,
+.dark-theme .form-group textarea:-webkit-autofill,
+.dark-theme .form-group textarea:-webkit-autofill:hover,
+.dark-theme .form-group textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: #f8fafc !important;
+    -webkit-box-shadow: 0 0 0px 1000px #070d1e inset !important;
+    box-shadow: 0 0 0px 1000px #070d1e inset !important;
+    caret-color: #f8fafc;
+}
+
+[data-theme="dark"] .form-group input:focus,
+[data-theme="dark"] .form-group textarea:focus,
+.dark-theme .form-group input:focus,
+.dark-theme .form-group textarea:focus {
+    outline: none;
+    border-color: #38bdf8;
+    background: #0d1527;
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.25);
+}
+
+[data-theme="dark"] .form-group input:focus + label,
+[data-theme="dark"] .form-group input:not(:placeholder-shown) + label,
+[data-theme="dark"] .form-group textarea:focus + label,
+[data-theme="dark"] .form-group textarea:not(:placeholder-shown) + label,
+.dark-theme .form-group input:focus + label,
+.dark-theme .form-group input:not(:placeholder-shown) + label,
+.dark-theme .form-group textarea:focus + label,
+.dark-theme .form-group textarea:not(:placeholder-shown) + label {
+    background: var(--bg-card);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+[data-theme="dark"] .form-feedback,
+.dark-theme .form-feedback {
+    color: #fca5a5;
+}
+
+[data-theme="dark"] .form-group input.is-invalid,
+[data-theme="dark"] .form-group textarea.is-invalid,
+.dark-theme .form-group input.is-invalid,
+.dark-theme .form-group textarea.is-invalid {
+    border-color: #f87171 !important;
+    background: #190c10 !important;
+    box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.22) !important;
+}
+
+[data-theme="dark"] .form-group input.is-valid,
+[data-theme="dark"] .form-group textarea.is-valid,
+.dark-theme .form-group input.is-valid,
+.dark-theme .form-group textarea.is-valid {
     border-color: #34d399 !important;
-    background: #0b1120 !important;
+    background: #091717 !important;
     box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.2) !important;
 }
 

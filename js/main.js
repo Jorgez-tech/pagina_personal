@@ -37,7 +37,7 @@ function initNavbar() {
         }
     });
 
-    // Navegación suave y activar enlace actual con offset milimétrico
+    // Navegación suave y activar enlace actual con offset milimétrico exacto
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -48,11 +48,9 @@ function initNavbar() {
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
                     const navHeight = navbar ? navbar.offsetHeight : 80;
-                    const header = targetSection.querySelector('.section-header') || targetSection;
-                    // Coordenada exacta del encabezado de la sección
-                    const headerTop = header.getBoundingClientRect().top + window.scrollY;
-                    // Posicionarlo exactamente a 20px debajo de la barra de navegación
-                    const exactTarget = Math.max(0, headerTop - navHeight - 20);
+                    // Coordenada exacta del inicio de la sección (evita que asome la sección anterior)
+                    const sectionTop = targetSection.getBoundingClientRect().top + window.scrollY;
+                    const exactTarget = Math.max(0, sectionTop - navHeight);
                     window.scrollTo({
                         top: exactTarget,
                         behavior: 'smooth'
@@ -81,19 +79,20 @@ function initNavbar() {
         const navHeight = navbar ? navbar.offsetHeight : 80;
 
         sections.forEach(section => {
-            const header = section.querySelector('.section-header') || section;
-            const headerTop = header.getBoundingClientRect().top + window.scrollY;
-            if (window.scrollY >= headerTop - navHeight - 60) {
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+            if (window.scrollY >= sectionTop - navHeight - 30) {
                 current = section.getAttribute('id');
             }
         });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
+        if (current) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
     }, { passive: true });
 }
 
@@ -126,11 +125,11 @@ function initThemeToggle() {
     const html = document.documentElement;
     if (!themeToggle) return;
 
-    let savedTheme = 'light';
+    let savedTheme = 'dark';
     try {
-        savedTheme = localStorage.getItem('theme') || 'light';
+        savedTheme = localStorage.getItem('theme') || 'dark';
     } catch (e) {
-        console.warn('localStorage no disponible para tema, usando default light.');
+        console.warn('localStorage no disponible para tema, usando default dark.');
     }
 
     applyTheme(savedTheme);
